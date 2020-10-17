@@ -1,0 +1,39 @@
+{
+  "name": "bearbnb-frontend",
+  "version": "1.0.0",
+  "description": "the react frontend for a bear-themed airbnb clone",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmtes/bearbnb-frontend.git"
+  },
+  "author": "Juno Tesoro",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/jmtes/bearbnb-frontend/issues"
+  },
+  "homepage": "https://github.com/jmtes/bearbnb-frontend#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/register": "^7.11.5",
+    "babel-eslint": "^10.1.0",
+    "env-cmd": "^10.1.0",
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.0.2",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.2",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "jest": "^26.4.2",
+    "prettier": "^2.1.2"
+  },
+  "dependencies": {},
+  "jest": {}
+}
