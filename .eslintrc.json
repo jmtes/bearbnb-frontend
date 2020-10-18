@@ -2,7 +2,9 @@
   "extends": ["airbnb", "prettier"],
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "warn"
+    "prettier/prettier": "warn",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-one-expression-per-line": [1, "literal"]
   },
   "parser": "babel-eslint",
   "parserOptions": {
