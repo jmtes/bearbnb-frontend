@@ -4,7 +4,9 @@
   "description": "the react frontend for a bear-themed airbnb clone",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/index.html"
+    "dev": "parcel src/index.html",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -23,7 +25,13 @@
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.1",
     "@babel/register": "^7.11.5",
+    "@storybook/addon-actions": "^6.0.26",
+    "@storybook/addon-essentials": "^6.0.26",
+    "@storybook/addon-links": "^6.0.26",
+    "@storybook/react": "^6.0.26",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "core-js": "^3.6.5",
     "env-cmd": "^10.1.0",
     "eslint": "^7.10.0",
     "eslint-config-airbnb": "^18.2.0",
@@ -36,7 +44,8 @@
     "eslint-plugin-react-hooks": "^4.1.2",
     "jest": "^26.4.2",
     "parcel-bundler": "^1.12.4",
-    "prettier": "^2.1.2"
+    "prettier": "^2.1.2",
+    "react-is": "^16.13.1"
   },
   "dependencies": {
     "react": "^16.14.0",
