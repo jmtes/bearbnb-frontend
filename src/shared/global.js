@@ -14,6 +14,7 @@ export const bodyStyles = css`
   height: 100vh;
   width: 100vw;
   font-family: ${font.family.primary};
+  color: #403c34;
 `;
 
 export const GlobalStyle = createGlobalStyle`
