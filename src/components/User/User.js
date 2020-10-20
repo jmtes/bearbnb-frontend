@@ -1,17 +1,38 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { font } from '../../shared/theme';
 import chevron from '../../assets/chevron.svg';
 
-const UserWrapper = styled.div`
+const UserButton = styled.button.attrs({
+  'aria-expanded': false
+})`
   display: inline-flex;
   align-items: center;
   font-weight: ${font.weight.medium};
-  border: 1px solid black;
   position: relative;
   padding: 0.5rem;
+  border-radius: 24px;
+  background-color: #fff;
+  transition: background-color 0.25s ease;
+  border: 2px solid transparent;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: #f4f4f4;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+    border: 2px solid black;
+  }
 
   & div {
     margin-left: 0.5rem;
@@ -38,37 +59,56 @@ const UserDropdownToggle = styled.div`
   align-items: center;
 `;
 
-const UserDropdown = styled.div`
+const UserMenu = styled.ul`
   position: absolute;
   display: none;
+
+  ${UserButton}:active + &,
+  ${UserButton}:focus + & {
+    display: block;
+  }
 `;
 
 const User = ({
   isLoggedIn = false,
   user: { avatar = 'https://i.imgur.com/ccPgAlP.png', name = 'Guest Hibermate' }
 }) => {
+  const MenuRef = useRef();
+
+  const expandMenu = () => {
+    MenuRef.current.setAttribute('aria-expanded', true);
+  };
+
+  const hideMenu = () => {
+    MenuRef.current.setAttribute('aria-expanded', false);
+  };
+
   return (
-    <UserWrapper>
-      <UserAvatar avatar={avatar} />
-      <UserName>{name}</UserName>
-      <UserDropdownToggle>
-        <img src={chevron} alt="Show user menu" />
-      </UserDropdownToggle>
-      <UserDropdown>
-        <ul className="menu-options">
-          {isLoggedIn ? (
-            <Fragment>
-              <li>Log out</li>
-            </Fragment>
-          ) : (
-            <Fragment>
-              <li>Log in</li>
-              <li>Sign up</li>
-            </Fragment>
-          )}
-        </ul>
-      </UserDropdown>
-    </UserWrapper>
+    <Fragment>
+      <UserButton
+        ref={MenuRef}
+        onClick={expandMenu}
+        onFocus={expandMenu}
+        onBlur={hideMenu}>
+        <UserAvatar avatar={avatar} />
+        <UserName>{name}</UserName>
+        <UserDropdownToggle>
+          <img src={chevron} alt="Show user menu" />
+        </UserDropdownToggle>
+      </UserButton>
+      <UserMenu>
+        {isLoggedIn ? (
+          <Fragment>
+            <li>Log out</li>
+          </Fragment>
+        ) : (
+          <Fragment>
+            <li>Log in</li>
+            <li>Sign up</li>
+          </Fragment>
+        )}
+      </UserMenu>
+    </Fragment>
   );
 };
 
