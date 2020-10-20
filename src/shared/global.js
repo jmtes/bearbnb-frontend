@@ -27,4 +27,8 @@ export const GlobalStyle = createGlobalStyle`
   body {
     ${bodyStyles}
   }
+
+  body.using-mouse :focus {
+    outline: none;
+  }
 `;

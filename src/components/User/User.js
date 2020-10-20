@@ -28,15 +28,7 @@ const UserButton = styled.button.attrs({
 
   &:hover {
     background-color: #f4f4f4;
-  }
-
-  &:hover {
     cursor: pointer;
-  }
-
-  &:focus,
-  &:active {
-    outline: none;
   }
 
   & div {
@@ -66,7 +58,6 @@ const UserDropdownToggle = styled.div`
 
 const UserMenu = styled.ul`
   transition: all 1s ease;
-  display: none;
   list-style-type: none;
   margin-top: 0.5rem;
   padding: 0;
@@ -77,11 +68,6 @@ const UserMenu = styled.ul`
   border: 1px solid #f4f4f4;
   overflow: hidden;
   font-size: 0.875rem;
-
-  ${UserButton}:active + &,
-    ${UserButton}:focus + & {
-    display: inline-block;
-  }
 
   li {
     padding: 0.75rem 1.25rem 0.75rem 0.75rem;
@@ -106,30 +92,29 @@ const User = ({
   isLoggedIn = false,
   user: { avatar = 'https://i.imgur.com/ccPgAlP.png', name = 'Guest' }
 }) => {
+  const MenuButtonRef = useRef();
   const MenuRef = useRef();
 
   const expandMenu = () => {
-    MenuRef.current.setAttribute('aria-expanded', true);
+    MenuButtonRef.current.setAttribute('aria-expanded', true);
+    MenuRef.current.hidden = false;
   };
 
   const hideMenu = () => {
-    MenuRef.current.setAttribute('aria-expanded', false);
+    MenuButtonRef.current.setAttribute('aria-expanded', false);
+    MenuRef.current.hidden = true;
   };
 
   return (
     <Wrapper>
-      <UserButton
-        ref={MenuRef}
-        onClick={expandMenu}
-        onFocus={expandMenu}
-        onBlur={hideMenu}>
+      <UserButton ref={MenuButtonRef} onClick={expandMenu} onFocus={expandMenu}>
         <UserAvatar avatar={avatar} />
         <UserName>{name}</UserName>
         <UserDropdownToggle>
           <img src={chevron} alt="Show user menu" />
         </UserDropdownToggle>
       </UserButton>
-      <UserMenu>
+      <UserMenu hidden ref={MenuRef}>
         {isLoggedIn ? (
           <Fragment>
             <li>
