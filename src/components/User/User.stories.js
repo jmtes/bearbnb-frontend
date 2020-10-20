@@ -1,10 +1,12 @@
 import React from 'react';
+import { MemoryRouter } from 'react-router-dom';
 
 import User from './User';
 
 export default {
   title: 'User',
-  component: User
+  component: User,
+  decorators: [(story) => <MemoryRouter>{story()}</MemoryRouter>]
 };
 
 const Template = (args) => <User {...args} />;
