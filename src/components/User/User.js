@@ -1,9 +1,17 @@
 import React, { Fragment, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import { font } from '../../shared/theme';
 import chevron from '../../assets/chevron.svg';
+
+const Wrapper = styled.nav`
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+`;
 
 const UserButton = styled.button.attrs({
   'aria-expanded': false
@@ -18,9 +26,7 @@ const UserButton = styled.button.attrs({
   transition: background-color 0.25s ease;
   border: 2px solid transparent;
 
-  &:hover,
-  &:focus,
-  &:active {
+  &:hover {
     background-color: #f4f4f4;
   }
 
@@ -31,7 +37,6 @@ const UserButton = styled.button.attrs({
   &:focus,
   &:active {
     outline: none;
-    border: 2px solid black;
   }
 
   & div {
@@ -60,18 +65,46 @@ const UserDropdownToggle = styled.div`
 `;
 
 const UserMenu = styled.ul`
-  position: absolute;
+  transition: all 1s ease;
   display: none;
+  list-style-type: none;
+  margin-top: 0.5rem;
+  padding: 0;
+  border-radius: 12px;
+  font-weight: ${font.weight.medium};
+  text-align: right;
+  width: 95%;
+  border: 1px solid #f4f4f4;
+  overflow: hidden;
+  font-size: 0.875rem;
 
   ${UserButton}:active + &,
-  ${UserButton}:focus + & {
-    display: block;
+    ${UserButton}:focus + & {
+    display: inline-block;
   }
+
+  li {
+    padding: 0.75rem 1.25rem 0.75rem 0.75rem;
+    border-bottom: 1px solid #f4f4f4;
+  }
+
+  li:hover {
+    background-color: #f4f4f4;
+  }
+
+  li:last-child {
+    border-bottom: 0;
+  }
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: #699d8e;
 `;
 
 const User = ({
   isLoggedIn = false,
-  user: { avatar = 'https://i.imgur.com/ccPgAlP.png', name = 'Guest Hibermate' }
+  user: { avatar = 'https://i.imgur.com/ccPgAlP.png', name = 'Guest' }
 }) => {
   const MenuRef = useRef();
 
@@ -84,7 +117,7 @@ const User = ({
   };
 
   return (
-    <Fragment>
+    <Wrapper>
       <UserButton
         ref={MenuRef}
         onClick={expandMenu}
@@ -99,16 +132,22 @@ const User = ({
       <UserMenu>
         {isLoggedIn ? (
           <Fragment>
-            <li>Log out</li>
+            <li>
+              <StyledLink>Log out</StyledLink>
+            </li>
           </Fragment>
         ) : (
           <Fragment>
-            <li>Log in</li>
-            <li>Sign up</li>
+            <li>
+              <StyledLink to="/login">Log in</StyledLink>
+            </li>
+            <li>
+              <StyledLink to="/logout">Sign up</StyledLink>
+            </li>
           </Fragment>
         )}
       </UserMenu>
-    </Fragment>
+    </Wrapper>
   );
 };
 
