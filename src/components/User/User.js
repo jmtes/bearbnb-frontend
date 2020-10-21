@@ -91,10 +91,7 @@ const StyledLink = styled(Link)`
   color: #497d6e;
 `;
 
-const User = ({
-  isLoggedIn = false,
-  user: { avatar = 'https://i.imgur.com/ccPgAlP.png', name = 'Guest' }
-}) => {
+const User = ({ isLoggedIn, user: { avatar, name } }) => {
   const MenuButtonRef = createRef();
   const MenuRef = createRef();
 
@@ -122,6 +119,7 @@ const User = ({
     <Wrapper>
       <UserButton
         aria-label="Show User Menu"
+        aria-haspopup="true"
         aria-expanded="false"
         aria-controls="user-menu"
         ref={MenuButtonRef}

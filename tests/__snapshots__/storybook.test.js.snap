@@ -7,6 +7,7 @@ exports[`Storyshots User Logged In 1`] = `
   <button
     aria-controls="user-menu"
     aria-expanded="false"
+    aria-haspopup="true"
     aria-label="Show User Menu"
     className="sc-gtssRu kGaVNf"
     onClick={[Function]}
@@ -57,6 +58,7 @@ exports[`Storyshots User Not Logged In 1`] = `
   <button
     aria-controls="user-menu"
     aria-expanded="false"
+    aria-haspopup="true"
     aria-label="Show User Menu"
     className="sc-gtssRu kGaVNf"
     onClick={[Function]}

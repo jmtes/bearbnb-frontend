@@ -30,7 +30,7 @@ const Template = (args) => <User {...args} />;
 
 export const NotLoggedIn = Template.bind({});
 NotLoggedIn.args = {
-  isLoggedIn: false
+  ...User.defaultProps
 };
 
 export const LoggedIn = Template.bind({});
