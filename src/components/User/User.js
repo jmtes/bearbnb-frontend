@@ -1,4 +1,4 @@
-import React, { Fragment, createRef } from 'react';
+import React, { Fragment, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
@@ -57,7 +57,7 @@ const UserDropdownToggle = styled.div`
 const UserMenu = styled.ul`
   transition: all 1s ease;
   list-style-type: none;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
   padding: 0;
   border-radius: 12px;
   font-weight: ${font.weight.medium};
@@ -92,8 +92,8 @@ const StyledLink = styled(Link)`
 `;
 
 const User = ({ isLoggedIn, user: { avatar, name } }) => {
-  const MenuButtonRef = createRef();
-  const MenuRef = createRef();
+  const MenuButtonRef = useRef();
+  const MenuRef = useRef();
 
   const onMenuButtonClick = () => {
     MenuButtonRef.current.setAttribute('aria-expanded', true);
