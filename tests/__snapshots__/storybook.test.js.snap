@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots User Logged In 1`] = `
+<nav
+  className="sc-bdnylx ctDWTm"
+>
+  <button
+    aria-controls="user-menu"
+    aria-expanded="false"
+    aria-label="Show User Menu"
+    className="sc-gtssRu kGaVNf"
+    onClick={[Function]}
+  >
+    <div
+      className="sc-dlnjPT dpaFHc"
+    />
+    <div
+      aria-hidden="true"
+      className="sc-hKFyIo gkNYQa"
+    >
+      Natalie
+    </div>
+    <div
+      aria-hidden="true"
+      className="sc-eCApGN gpAPdJ"
+    >
+      <img
+        alt="Show user menu"
+        src="test-file-stub"
+      />
+    </div>
+  </button>
+  <ul
+    className="sc-jSFkmK bLKAKk"
+    hidden={true}
+    id="user-menu"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <li>
+      <a
+        className="sc-gKAblj fusFZl"
+        href=""
+        onClick={[Function]}
+      >
+        Log out
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`Storyshots User Not Logged In 1`] = `
+<nav
+  className="sc-bdnylx ctDWTm"
+>
+  <button
+    aria-controls="user-menu"
+    aria-expanded="false"
+    aria-label="Show User Menu"
+    className="sc-gtssRu kGaVNf"
+    onClick={[Function]}
+  >
+    <div
+      className="sc-dlnjPT lozrlv"
+    />
+    <div
+      aria-hidden="true"
+      className="sc-hKFyIo gkNYQa"
+    >
+      Guest Hibermate
+    </div>
+    <div
+      aria-hidden="true"
+      className="sc-eCApGN gpAPdJ"
+    >
+      <img
+        alt="Show user menu"
+        src="test-file-stub"
+      />
+    </div>
+  </button>
+  <ul
+    className="sc-jSFkmK bLKAKk"
+    hidden={true}
+    id="user-menu"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <li>
+      <a
+        className="sc-gKAblj fusFZl"
+        href="/login"
+        onClick={[Function]}
+      >
+        Log in
+      </a>
+    </li>
+    <li>
+      <a
+        className="sc-gKAblj fusFZl"
+        href="/logout"
+        onClick={[Function]}
+      >
+        Sign up
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
