@@ -1,4 +1,4 @@
-import React, { Fragment, useRef } from 'react';
+import React, { Fragment, createRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
@@ -13,9 +13,7 @@ const Wrapper = styled.nav`
   position: relative;
 `;
 
-const UserButton = styled.button.attrs({
-  'aria-expanded': false
-})`
+const UserButton = styled.button`
   display: inline-flex;
   align-items: center;
   font-weight: ${font.weight.medium};
@@ -69,9 +67,14 @@ const UserMenu = styled.ul`
   overflow: hidden;
   font-size: 0.875rem;
 
+  &:focus-within {
+    display: inline-block;
+  }
+
   li {
     padding: 0.75rem 1.25rem 0.75rem 0.75rem;
     border-bottom: 1px solid #f4f4f4;
+    transition: background-color 0.5s ease;
   }
 
   li:hover {
@@ -85,36 +88,56 @@ const UserMenu = styled.ul`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: #699d8e;
+  color: #497d6e;
 `;
 
 const User = ({
   isLoggedIn = false,
   user: { avatar = 'https://i.imgur.com/ccPgAlP.png', name = 'Guest' }
 }) => {
-  const MenuButtonRef = useRef();
-  const MenuRef = useRef();
+  const MenuButtonRef = createRef();
+  const MenuRef = createRef();
 
-  const expandMenu = () => {
+  const onMenuButtonClick = () => {
     MenuButtonRef.current.setAttribute('aria-expanded', true);
     MenuRef.current.hidden = false;
+    MenuRef.current.querySelector('a').focus();
   };
 
-  const hideMenu = () => {
+  const listenForEscape = ({ key }) => {
+    if (key === 'Escape') MenuButtonRef.current.focus();
+  };
+
+  const onMenuFocus = () => {
+    MenuRef.current.addEventListener('keydown', listenForEscape);
+  };
+
+  const onMenuBlur = () => {
     MenuButtonRef.current.setAttribute('aria-expanded', false);
     MenuRef.current.hidden = true;
+    MenuRef.current.removeEventListener('keydown', listenForEscape);
   };
 
   return (
     <Wrapper>
-      <UserButton ref={MenuButtonRef} onClick={expandMenu} onFocus={expandMenu}>
+      <UserButton
+        aria-label="Show User Menu"
+        aria-expanded="false"
+        aria-controls="user-menu"
+        ref={MenuButtonRef}
+        onClick={onMenuButtonClick}>
         <UserAvatar avatar={avatar} />
-        <UserName>{name}</UserName>
-        <UserDropdownToggle>
+        <UserName aria-hidden="true">{name}</UserName>
+        <UserDropdownToggle aria-hidden="true">
           <img src={chevron} alt="Show user menu" />
         </UserDropdownToggle>
       </UserButton>
-      <UserMenu hidden ref={MenuRef}>
+      <UserMenu
+        hidden
+        id="user-menu"
+        ref={MenuRef}
+        onFocus={onMenuFocus}
+        onBlur={onMenuBlur}>
         {isLoggedIn ? (
           <Fragment>
             <li>
