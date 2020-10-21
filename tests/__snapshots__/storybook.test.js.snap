@@ -1,29 +1,138 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots User Logged In 1`] = `
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem;
+  border-radius: 24px;
+  background-color: #fff;
+  -webkit-transition: background-color 0.25s ease;
+  transition: background-color 0.25s ease;
+  border: 2px solid transparent;
+}
+
+.c1:hover {
+  background-color: #f4f4f4;
+  cursor: pointer;
+}
+
+.c1 div {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.c2 {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 55px;
+  background: url(https://randomuser.me/api/portraits/women/26.jpg);
+  background-size: cover;
+  display: inline-block;
+}
+
+.c3 {
+  font-size: 1rem;
+  display: inline-block;
+}
+
+.c4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5 {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  list-style-type: none;
+  margin-top: 0.25rem;
+  padding: 0;
+  border-radius: 12px;
+  font-weight: 500;
+  text-align: right;
+  width: 95%;
+  border: 1px solid #f4f4f4;
+  overflow: hidden;
+  font-size: 0.875rem;
+}
+
+.c5:focus-within {
+  display: inline-block;
+}
+
+.c5 li {
+  padding: 0.75rem 1.25rem 0.75rem 0.75rem;
+  border-bottom: 1px solid #f4f4f4;
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+}
+
+.c5 li:hover {
+  background-color: #f4f4f4;
+}
+
+.c5 li:last-child {
+  border-bottom: 0;
+}
+
+.c6 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #497d6e;
+}
+
 <nav
-  className="sc-bdnylx ctDWTm"
+  className="c0"
 >
   <button
     aria-controls="user-menu"
     aria-expanded="false"
     aria-haspopup="true"
     aria-label="Show User Menu"
-    className="sc-gtssRu kGaVNf"
+    className="c1"
     onClick={[Function]}
   >
     <div
-      className="sc-dlnjPT dpaFHc"
+      className="c2"
     />
     <div
       aria-hidden="true"
-      className="sc-hKFyIo gkNYQa"
+      className="c3"
     >
       Natalie
     </div>
     <div
       aria-hidden="true"
-      className="sc-eCApGN gpAPdJ"
+      className="c4"
     >
       <img
         alt="Show user menu"
@@ -32,7 +141,7 @@ exports[`Storyshots User Logged In 1`] = `
     </div>
   </button>
   <ul
-    className="sc-jSFkmK bLKAKk"
+    className="c5"
     hidden={true}
     id="user-menu"
     onBlur={[Function]}
@@ -40,7 +149,7 @@ exports[`Storyshots User Logged In 1`] = `
   >
     <li>
       <a
-        className="sc-gKAblj fusFZl"
+        className="c6"
         href=""
         onClick={[Function]}
       >
@@ -52,29 +161,138 @@ exports[`Storyshots User Logged In 1`] = `
 `;
 
 exports[`Storyshots User Not Logged In 1`] = `
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem;
+  border-radius: 24px;
+  background-color: #fff;
+  -webkit-transition: background-color 0.25s ease;
+  transition: background-color 0.25s ease;
+  border: 2px solid transparent;
+}
+
+.c1:hover {
+  background-color: #f4f4f4;
+  cursor: pointer;
+}
+
+.c1 div {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.c2 {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 55px;
+  background: url(https://i.imgur.com/ccPgAlP.png);
+  background-size: cover;
+  display: inline-block;
+}
+
+.c3 {
+  font-size: 1rem;
+  display: inline-block;
+}
+
+.c4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5 {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  list-style-type: none;
+  margin-top: 0.25rem;
+  padding: 0;
+  border-radius: 12px;
+  font-weight: 500;
+  text-align: right;
+  width: 95%;
+  border: 1px solid #f4f4f4;
+  overflow: hidden;
+  font-size: 0.875rem;
+}
+
+.c5:focus-within {
+  display: inline-block;
+}
+
+.c5 li {
+  padding: 0.75rem 1.25rem 0.75rem 0.75rem;
+  border-bottom: 1px solid #f4f4f4;
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+}
+
+.c5 li:hover {
+  background-color: #f4f4f4;
+}
+
+.c5 li:last-child {
+  border-bottom: 0;
+}
+
+.c6 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #497d6e;
+}
+
 <nav
-  className="sc-bdnylx ctDWTm"
+  className="c0"
 >
   <button
     aria-controls="user-menu"
     aria-expanded="false"
     aria-haspopup="true"
     aria-label="Show User Menu"
-    className="sc-gtssRu kGaVNf"
+    className="c1"
     onClick={[Function]}
   >
     <div
-      className="sc-dlnjPT lozrlv"
+      className="c2"
     />
     <div
       aria-hidden="true"
-      className="sc-hKFyIo gkNYQa"
+      className="c3"
     >
       Guest Hibermate
     </div>
     <div
       aria-hidden="true"
-      className="sc-eCApGN gpAPdJ"
+      className="c4"
     >
       <img
         alt="Show user menu"
@@ -83,7 +301,7 @@ exports[`Storyshots User Not Logged In 1`] = `
     </div>
   </button>
   <ul
-    className="sc-jSFkmK bLKAKk"
+    className="c5"
     hidden={true}
     id="user-menu"
     onBlur={[Function]}
@@ -91,7 +309,7 @@ exports[`Storyshots User Not Logged In 1`] = `
   >
     <li>
       <a
-        className="sc-gKAblj fusFZl"
+        className="c6"
         href="/login"
         onClick={[Function]}
       >
@@ -100,7 +318,7 @@ exports[`Storyshots User Not Logged In 1`] = `
     </li>
     <li>
       <a
-        className="sc-gKAblj fusFZl"
+        className="c6"
         href="/logout"
         onClick={[Function]}
       >
