@@ -28,16 +28,6 @@ export const GlobalStyle = createGlobalStyle`
     ${bodyStyles}
   }
 
-  body button,
-  body a {
-    border: 2px solid transparent;
-  }
-
-  body :focus {
-    outline: none;
-    border: 2px solid #000;
-  }
-
   body.using-mouse :focus {
     outline: none;
   }
