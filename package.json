@@ -8,7 +8,8 @@
     "test": "jest --watch",
     "snapshot": "jest storybook --watch",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --project-token stvcva5wafh"
   },
   "repository": {
     "type": "git",
