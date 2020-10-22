@@ -117,7 +117,6 @@ const User = ({ isLoggedIn, user: { avatar, name } }) => {
   return (
     <Wrapper>
       <UserButton
-        data-testid="user-menu-button"
         aria-label="Show User Menu"
         aria-haspopup="true"
         aria-expanded={isOpen}

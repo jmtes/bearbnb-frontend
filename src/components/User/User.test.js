@@ -24,7 +24,7 @@ describe('User Component', () => {
     test('Menu is hidden by default', () => {
       const wrapper = shallow(<User />);
 
-      const menu = wrapper.find('#user-menu');
+      const menu = wrapper.find(UserMenu);
       const menuIsHidden = menu.props().hidden;
 
       expect(menuIsHidden).toBe(true);

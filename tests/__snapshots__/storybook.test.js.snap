@@ -115,7 +115,7 @@ exports[`Storyshots User Logged In 1`] = `
 >
   <button
     aria-controls="user-menu"
-    aria-expanded="false"
+    aria-expanded={false}
     aria-haspopup="true"
     aria-label="Show User Menu"
     className="c1"
@@ -145,12 +145,12 @@ exports[`Storyshots User Logged In 1`] = `
     hidden={true}
     id="user-menu"
     onBlur={[Function]}
-    onFocus={[Function]}
+    onKeyDown={[Function]}
   >
     <li>
       <a
         className="c6"
-        href=""
+        href="/logout"
         onClick={[Function]}
       >
         Log out
@@ -275,7 +275,7 @@ exports[`Storyshots User Not Logged In 1`] = `
 >
   <button
     aria-controls="user-menu"
-    aria-expanded="false"
+    aria-expanded={false}
     aria-haspopup="true"
     aria-label="Show User Menu"
     className="c1"
@@ -305,7 +305,7 @@ exports[`Storyshots User Not Logged In 1`] = `
     hidden={true}
     id="user-menu"
     onBlur={[Function]}
-    onFocus={[Function]}
+    onKeyDown={[Function]}
   >
     <li>
       <a
@@ -319,7 +319,7 @@ exports[`Storyshots User Not Logged In 1`] = `
     <li>
       <a
         className="c6"
-        href="/logout"
+        href="/register"
         onClick={[Function]}
       >
         Sign up
