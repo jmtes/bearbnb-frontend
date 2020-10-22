@@ -44,7 +44,7 @@ const UserAvatar = styled.div`
   display: inline-block;
 `;
 
-const UserName = styled.div`
+export const UserName = styled.div`
   font-size: 1rem;
   display: inline-block;
 `;
@@ -91,6 +91,7 @@ const StyledLink = styled(Link)`
   color: #497d6e;
 `;
 
+// TODO: Refactor to get isLoggedIn and user from auth context instead of props
 const User = ({ isLoggedIn, user: { avatar, name } }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -98,34 +99,19 @@ const User = ({ isLoggedIn, user: { avatar, name } }) => {
   const MenuRef = useRef();
 
   useEffect(() => {
-    if (isOpen) {
-      // MenuRef.current.hidden = false;
-      MenuRef.current.querySelector('a').focus();
-      MenuRef.current.addEventListener('keydown', listenForEscape);
-    } else {
-      // MenuRef.current.hidden = true;
-      MenuRef.current.removeEventListener('keydown', listenForEscape);
-    }
+    if (isOpen) MenuRef.current.querySelector('a').focus();
   }, [isOpen]);
 
   const onMenuButtonClick = () => {
     setIsOpen(true);
-    // MenuRef.current.hidden = false;
-    // MenuRef.current.querySelector('a').focus();
   };
 
-  const listenForEscape = ({ key }) => {
+  const onMenuKeyDown = ({ key }) => {
     if (key === 'Escape') MenuButtonRef.current.focus();
-  };
-
-  const onMenuFocus = () => {
-    MenuRef.current.addEventListener('keydown', listenForEscape);
   };
 
   const onMenuBlur = () => {
     setIsOpen(false);
-    // MenuRef.current.hidden = true;
-    // MenuRef.current.removeEventListener('keydown', listenForEscape);
   };
 
   return (
@@ -148,12 +134,12 @@ const User = ({ isLoggedIn, user: { avatar, name } }) => {
         hidden={!isOpen}
         id="user-menu"
         ref={MenuRef}
-        onFocus={onMenuFocus}
-        onBlur={onMenuBlur}>
+        onBlur={onMenuBlur}
+        onKeyDown={(event) => onMenuKeyDown(event)}>
         {isLoggedIn ? (
           <Fragment>
             <li>
-              <StyledLink>Log out</StyledLink>
+              <StyledLink to="/logout">Log out</StyledLink>
             </li>
           </Fragment>
         ) : (
@@ -162,7 +148,7 @@ const User = ({ isLoggedIn, user: { avatar, name } }) => {
               <StyledLink to="/login">Log in</StyledLink>
             </li>
             <li>
-              <StyledLink to="/logout">Sign up</StyledLink>
+              <StyledLink to="/register">Sign up</StyledLink>
             </li>
           </Fragment>
         )}

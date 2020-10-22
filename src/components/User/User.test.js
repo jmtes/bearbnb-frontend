@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter, Link } from 'react-router-dom';
 import 'jest-styled-components';
 
-import User, { UserButton, UserMenu } from './User';
+import User, { UserButton, UserMenu, UserName } from './User';
 import { NotLoggedIn, LoggedIn } from './User.stories';
 
 describe('User Component', () => {
@@ -63,18 +63,77 @@ describe('User Component', () => {
       expect(document.activeElement).toBe(firstLink);
     });
 
-    test('Focus is shifted back to button if escape is pressed within menu', () => {});
+    test('Focus is shifted back to button if escape is pressed within menu', () => {
+      const wrapper = mount(
+        <MemoryRouter>
+          <User />
+        </MemoryRouter>,
+        { attachTo: document.querySelector('#test-root') }
+      );
+      const button = wrapper.find(UserButton);
+
+      button.simulate('click');
+
+      const menu = wrapper.find(UserMenu);
+      menu.simulate('keydown', { key: 'Escape' });
+
+      const buttonNode = button.getDOMNode();
+
+      expect(document.activeElement).toBe(buttonNode);
+    });
   });
 
   describe('Not logged in', () => {
-    test('"Guest Hibermate" shows up as the default user name', () => {});
+    test('"Guest Hibermate" shows up as the default user name', () => {
+      const wrapper = mount(
+        <MemoryRouter>
+          <User {...NotLoggedIn.args} />
+        </MemoryRouter>
+      );
+      const name = wrapper.find(UserName);
 
-    test('Menu contains login and sign-up links', () => {});
+      expect(name.text()).toBe('Guest Hibermate');
+    });
+
+    test('Menu contains login and sign-up links', () => {
+      const wrapper = mount(
+        <MemoryRouter>
+          <User {...NotLoggedIn.args} />
+        </MemoryRouter>
+      );
+      const menu = wrapper.find(UserMenu);
+
+      const loginLink = menu.find('a[href="/login"]');
+      expect(loginLink.text()).toBe('Log in');
+
+      const signupLink = menu.find('a[href="/register"]');
+      expect(signupLink.text()).toBe('Sign up');
+    });
   });
 
   describe('Logged in', () => {
-    test("Displays logged-in user's name", () => {});
+    test("Displays logged-in user's name", () => {
+      const wrapper = mount(
+        <MemoryRouter>
+          <User {...LoggedIn.args} />
+        </MemoryRouter>
+      );
+      const name = wrapper.find(UserName);
 
-    test('Menu contains logout link', () => {});
+      expect(name.text()).toBe(LoggedIn.args.user.name);
+    });
+
+    test('Menu contains logout link', () => {
+      const wrapper = mount(
+        <MemoryRouter>
+          <User {...LoggedIn.args} />
+        </MemoryRouter>
+      );
+
+      const menu = wrapper.find(UserMenu);
+
+      const loginLink = menu.find('a[href="/logout"]');
+      expect(loginLink.text()).toBe('Log out');
+    });
   });
 });
