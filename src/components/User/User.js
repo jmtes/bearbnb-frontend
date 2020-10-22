@@ -1,4 +1,4 @@
-import React, { Fragment, useRef, useState } from 'react';
+import React, { Fragment, useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
@@ -13,7 +13,7 @@ const Wrapper = styled.nav`
   position: relative;
 `;
 
-const UserButton = styled.button`
+export const UserButton = styled.button`
   display: inline-flex;
   align-items: center;
   font-weight: ${font.weight.medium};
@@ -54,7 +54,7 @@ const UserDropdownToggle = styled.div`
   align-items: center;
 `;
 
-const UserMenu = styled.ul`
+export const UserMenu = styled.ul`
   transition: all 1s ease;
   list-style-type: none;
   margin-top: 0.25rem;
@@ -97,10 +97,21 @@ const User = ({ isLoggedIn, user: { avatar, name } }) => {
   const MenuButtonRef = useRef();
   const MenuRef = useRef();
 
+  useEffect(() => {
+    if (isOpen) {
+      // MenuRef.current.hidden = false;
+      MenuRef.current.querySelector('a').focus();
+      MenuRef.current.addEventListener('keydown', listenForEscape);
+    } else {
+      // MenuRef.current.hidden = true;
+      MenuRef.current.removeEventListener('keydown', listenForEscape);
+    }
+  }, [isOpen]);
+
   const onMenuButtonClick = () => {
     setIsOpen(true);
-    MenuRef.current.hidden = false;
-    MenuRef.current.querySelector('a').focus();
+    // MenuRef.current.hidden = false;
+    // MenuRef.current.querySelector('a').focus();
   };
 
   const listenForEscape = ({ key }) => {
@@ -113,13 +124,14 @@ const User = ({ isLoggedIn, user: { avatar, name } }) => {
 
   const onMenuBlur = () => {
     setIsOpen(false);
-    MenuRef.current.hidden = true;
-    MenuRef.current.removeEventListener('keydown', listenForEscape);
+    // MenuRef.current.hidden = true;
+    // MenuRef.current.removeEventListener('keydown', listenForEscape);
   };
 
   return (
     <Wrapper>
       <UserButton
+        data-testid="user-menu-button"
         aria-label="Show User Menu"
         aria-haspopup="true"
         aria-expanded={isOpen}
@@ -133,7 +145,7 @@ const User = ({ isLoggedIn, user: { avatar, name } }) => {
         </UserDropdownToggle>
       </UserButton>
       <UserMenu
-        hidden
+        hidden={!isOpen}
         id="user-menu"
         ref={MenuRef}
         onFocus={onMenuFocus}
