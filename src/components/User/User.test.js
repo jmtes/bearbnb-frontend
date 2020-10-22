@@ -123,6 +123,20 @@ describe('User Component', () => {
       expect(name.text()).toBe(LoggedIn.args.user.name);
     });
 
+    test("Displays only user's first name if they provided their full name", () => {
+      const wrapper = mount(
+        <MemoryRouter>
+          <User
+            {...LoggedIn.args}
+            user={{ ...LoggedIn.args.user, name: 'Natalie Nicholls' }}
+          />
+        </MemoryRouter>
+      );
+      const name = wrapper.find(UserName);
+
+      expect(name.text()).toBe('Natalie');
+    });
+
     test('Menu contains logout link', () => {
       const wrapper = mount(
         <MemoryRouter>

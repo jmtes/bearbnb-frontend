@@ -124,7 +124,9 @@ const User = ({ isLoggedIn, user: { avatar, name } }) => {
         ref={MenuButtonRef}
         onClick={onMenuButtonClick}>
         <UserAvatar avatar={avatar} />
-        <UserName aria-hidden="true">{name}</UserName>
+        <UserName aria-hidden="true">
+          {isLoggedIn ? name.split(' ', 1) : name}
+        </UserName>
         <UserDropdownToggle aria-hidden="true">
           <img src={chevron} alt="Show user menu" />
         </UserDropdownToggle>
