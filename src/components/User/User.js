@@ -1,4 +1,4 @@
-import React, { Fragment, useRef } from 'react';
+import React, { Fragment, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
@@ -92,11 +92,13 @@ const StyledLink = styled(Link)`
 `;
 
 const User = ({ isLoggedIn, user: { avatar, name } }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const MenuButtonRef = useRef();
   const MenuRef = useRef();
 
   const onMenuButtonClick = () => {
-    MenuButtonRef.current.setAttribute('aria-expanded', true);
+    setIsOpen(true);
     MenuRef.current.hidden = false;
     MenuRef.current.querySelector('a').focus();
   };
@@ -110,7 +112,7 @@ const User = ({ isLoggedIn, user: { avatar, name } }) => {
   };
 
   const onMenuBlur = () => {
-    MenuButtonRef.current.setAttribute('aria-expanded', false);
+    setIsOpen(false);
     MenuRef.current.hidden = true;
     MenuRef.current.removeEventListener('keydown', listenForEscape);
   };
@@ -120,7 +122,7 @@ const User = ({ isLoggedIn, user: { avatar, name } }) => {
       <UserButton
         aria-label="Show User Menu"
         aria-haspopup="true"
-        aria-expanded="false"
+        aria-expanded={isOpen}
         aria-controls="user-menu"
         ref={MenuButtonRef}
         onClick={onMenuButtonClick}>
