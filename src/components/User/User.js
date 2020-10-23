@@ -2,6 +2,7 @@ import React, { Fragment, useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import { font } from '../../shared/theme';
 import chevron from '../../assets/chevron.svg';
@@ -174,4 +175,9 @@ User.defaultProps = {
   }
 };
 
-export default User;
+const mapStateToProps = (state) => ({
+  isLoggedIn: state.auth.isLoggedIn,
+  user: state.auth.user || undefined
+});
+
+export default connect(mapStateToProps, null)(User);

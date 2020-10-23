@@ -59,7 +59,11 @@
   "dependencies": {
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
+    "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
     "styled-components": "^5.2.0",
     "styled-normalize": "^8.0.7"
   },
@@ -68,8 +72,8 @@
       "./tests/config/setupTests.js"
     ],
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|svg)$": "<rootDir>/tests/__mocks__/fileMock.js",
-      "\\.css$": "<rootDir>/tests/__mocks__/styleMock.js"
+      "\\.(jpg|jpeg|png|gif|svg)$": "<rootDir>/mocks/fileMock.js",
+      "\\.css$": "<rootDir>/mocks/styleMock.js"
     }
   }
 }

@@ -1,7 +1,9 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
 import User from './User';
+import { storeNotLoggedIn, storeLoggedIn } from '../../../mocks/storeMock';
 
 export default {
   title: 'User',
@@ -29,15 +31,19 @@ export default {
 const Template = (args) => <User {...args} />;
 
 export const NotLoggedIn = Template.bind({});
-NotLoggedIn.args = {
-  ...User.defaultProps
-};
+NotLoggedIn.decorators = [
+  (Story) => (
+    <Provider store={storeNotLoggedIn}>
+      <Story />
+    </Provider>
+  )
+];
 
 export const LoggedIn = Template.bind({});
-LoggedIn.args = {
-  isLoggedIn: true,
-  user: {
-    avatar: 'https://randomuser.me/api/portraits/women/26.jpg',
-    name: 'Natalie'
-  }
-};
+LoggedIn.decorators = [
+  (Story) => (
+    <Provider store={storeLoggedIn}>
+      <Story />
+    </Provider>
+  )
+];

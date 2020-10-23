@@ -3,9 +3,14 @@ import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
 import { MemoryRouter, Link } from 'react-router-dom';
 import 'jest-styled-components';
+import { Provider } from 'react-redux';
 
-import User, { UserButton, UserMenu, UserName } from './User';
-import { NotLoggedIn, LoggedIn } from './User.stories';
+import User, {
+  UserButton,
+  UserMenu,
+  UserName
+} from '../../src/components/User/User';
+import { storeNotLoggedIn, storeLoggedIn } from '../../mocks/storeMock';
 
 describe('User Component', () => {
   describe('Common', () => {
@@ -22,7 +27,13 @@ describe('User Component', () => {
     });
 
     test('Menu is hidden by default', () => {
-      const wrapper = shallow(<User />);
+      const wrapper = mount(
+        <Provider store={storeNotLoggedIn}>
+          <MemoryRouter>
+            <User />
+          </MemoryRouter>
+        </Provider>
+      );
 
       const menu = wrapper.find(UserMenu);
       const menuIsHidden = menu.props().hidden;
@@ -32,9 +43,11 @@ describe('User Component', () => {
 
     test('Clicking on button shows menu', () => {
       const wrapper = mount(
-        <MemoryRouter>
-          <User />
-        </MemoryRouter>
+        <Provider store={storeNotLoggedIn}>
+          <MemoryRouter>
+            <User />
+          </MemoryRouter>
+        </Provider>
       );
       const button = wrapper.find(UserButton);
 
@@ -48,9 +61,11 @@ describe('User Component', () => {
 
     test('Focus is shifted to first menu link when clicked', () => {
       const wrapper = mount(
-        <MemoryRouter>
-          <User />
-        </MemoryRouter>,
+        <Provider store={storeNotLoggedIn}>
+          <MemoryRouter>
+            <User />
+          </MemoryRouter>
+        </Provider>,
         { attachTo: document.querySelector('#test-root') }
       );
       const button = wrapper.find(UserButton);
@@ -65,9 +80,11 @@ describe('User Component', () => {
 
     test('Focus is shifted back to button if escape is pressed within menu', () => {
       const wrapper = mount(
-        <MemoryRouter>
-          <User />
-        </MemoryRouter>,
+        <Provider store={storeNotLoggedIn}>
+          <MemoryRouter>
+            <User />
+          </MemoryRouter>
+        </Provider>,
         { attachTo: document.querySelector('#test-root') }
       );
       const button = wrapper.find(UserButton);
@@ -86,9 +103,11 @@ describe('User Component', () => {
   describe('Not logged in', () => {
     test('"Guest Hibermate" shows up as the default user name', () => {
       const wrapper = mount(
-        <MemoryRouter>
-          <User {...NotLoggedIn.args} />
-        </MemoryRouter>
+        <Provider store={storeNotLoggedIn}>
+          <MemoryRouter>
+            <User />
+          </MemoryRouter>
+        </Provider>
       );
       const name = wrapper.find(UserName);
 
@@ -97,9 +116,11 @@ describe('User Component', () => {
 
     test('Menu contains login and sign-up links', () => {
       const wrapper = mount(
-        <MemoryRouter>
-          <User {...NotLoggedIn.args} />
-        </MemoryRouter>
+        <Provider store={storeNotLoggedIn}>
+          <MemoryRouter>
+            <User />
+          </MemoryRouter>
+        </Provider>
       );
       const menu = wrapper.find(UserMenu);
 
@@ -114,23 +135,24 @@ describe('User Component', () => {
   describe('Logged in', () => {
     test("Displays logged-in user's name", () => {
       const wrapper = mount(
-        <MemoryRouter>
-          <User {...LoggedIn.args} />
-        </MemoryRouter>
+        <Provider store={storeLoggedIn}>
+          <MemoryRouter>
+            <User />
+          </MemoryRouter>
+        </Provider>
       );
       const name = wrapper.find(UserName);
 
-      expect(name.text()).toBe(LoggedIn.args.user.name);
+      expect(name.text()).toBe(storeLoggedIn.getState().auth.user.name);
     });
 
     test("Displays only user's first name if they provided their full name", () => {
       const wrapper = mount(
-        <MemoryRouter>
-          <User
-            {...LoggedIn.args}
-            user={{ ...LoggedIn.args.user, name: 'Natalie Nicholls' }}
-          />
-        </MemoryRouter>
+        <Provider store={storeLoggedIn}>
+          <MemoryRouter>
+            <User />
+          </MemoryRouter>
+        </Provider>
       );
       const name = wrapper.find(UserName);
 
@@ -139,9 +161,11 @@ describe('User Component', () => {
 
     test('Menu contains logout link', () => {
       const wrapper = mount(
-        <MemoryRouter>
-          <User {...LoggedIn.args} />
-        </MemoryRouter>
+        <Provider store={storeLoggedIn}>
+          <MemoryRouter>
+            <User />
+          </MemoryRouter>
+        </Provider>
       );
 
       const menu = wrapper.find(UserMenu);
