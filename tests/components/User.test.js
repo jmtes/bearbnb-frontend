@@ -5,8 +5,12 @@ import { MemoryRouter, Link } from 'react-router-dom';
 import 'jest-styled-components';
 import { Provider } from 'react-redux';
 
-import User, { UserButton, UserMenu, UserName } from './User';
-import { storeNotLoggedIn, storeLoggedIn } from './User.stories';
+import User, {
+  UserButton,
+  UserMenu,
+  UserName
+} from '../../src/components/User/User';
+import { storeNotLoggedIn, storeLoggedIn } from '../../mocks/storeMock';
 
 describe('User Component', () => {
   describe('Common', () => {

@@ -72,8 +72,8 @@
       "./tests/config/setupTests.js"
     ],
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|svg)$": "<rootDir>/tests/__mocks__/fileMock.js",
-      "\\.css$": "<rootDir>/tests/__mocks__/styleMock.js"
+      "\\.(jpg|jpeg|png|gif|svg)$": "<rootDir>/mocks/fileMock.js",
+      "\\.css$": "<rootDir>/mocks/styleMock.js"
     }
   }
 }
