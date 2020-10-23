@@ -48,6 +48,10 @@ const UserAvatar = styled.div`
 export const UserName = styled.div`
   font-size: 1rem;
   display: inline-block;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
 `;
 
 const UserDropdownToggle = styled.div`
@@ -67,6 +71,9 @@ export const UserMenu = styled.ul`
   border: 1px solid #f4f4f4;
   overflow: hidden;
   font-size: 0.875rem;
+  position: absolute;
+  top: 100%;
+  background-color: #fff;
 
   &:focus-within {
     display: inline-block;
