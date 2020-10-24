@@ -28,7 +28,10 @@ const FormContainer = styled.div`
 
 const StyledForm = styled.form`
   display: flex;
-  border: 1px solid black;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 `;
 
 const Form = ({
