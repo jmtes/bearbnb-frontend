@@ -16,7 +16,7 @@ const StyledHeader = styled.header`
   position: relative;
 `;
 
-const TextLogo = styled.div`
+export const TextLogo = styled.div`
   font-family: ${font.family.logo};
   font-size: 2rem;
 
@@ -26,7 +26,7 @@ const TextLogo = styled.div`
   }
 `;
 
-const Logo = styled.img`
+export const Logo = styled.img`
   height: ${(props) => props.size};
   width: ${(props) => props.size};
   position: absolute;
