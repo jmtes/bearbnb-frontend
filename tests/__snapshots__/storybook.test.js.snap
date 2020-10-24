@@ -1,5 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Footer Default 1`] = `
+.c0 {
+  background-color: #403c34;
+  color: #fff;
+  font-weight: 500;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.c0 p {
+  margin: 0;
+}
+
+.c0 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #f2cb5e;
+  -webkit-transition: color 0.25s ease;
+  transition: color 0.25s ease;
+}
+
+.c0 a:hover {
+  color: #ffeb7e;
+}
+
+@media (max-width:1020px) {
+
+}
+
+@media (max-width:510px) {
+
+}
+
+<footer
+  className="c0"
+>
+  <p>
+    made by 
+    <a
+      href="https://github.com/jmtes"
+    >
+      juno tesoro
+    </a>
+  </p>
+</footer>
+`;
+
 exports[`Storyshots Header Default 1`] = `
 .c3 {
   display: -webkit-inline-box;
@@ -159,6 +213,14 @@ exports[`Storyshots Header Default 1`] = `
   .c2 {
     display: none;
   }
+}
+
+@media (max-width:1020px) {
+
+}
+
+@media (max-width:510px) {
+
 }
 
 <header
@@ -358,6 +420,14 @@ exports[`Storyshots User Logged In 1`] = `
   }
 }
 
+@media (max-width:1020px) {
+
+}
+
+@media (max-width:510px) {
+
+}
+
 <nav
   className="c0"
 >
@@ -525,6 +595,14 @@ exports[`Storyshots User Not Logged In 1`] = `
   .c3 {
     display: none;
   }
+}
+
+@media (max-width:1020px) {
+
+}
+
+@media (max-width:510px) {
+
 }
 
 <nav
