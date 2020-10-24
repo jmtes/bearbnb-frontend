@@ -1,4 +1,5 @@
 import React from 'react';
+import { action } from '@storybook/addon-actions';
 
 import Form from './Form';
 
@@ -11,6 +12,7 @@ const Template = (args) => <Form {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
+  ...Form.defaultProps,
   title: 'Form Title',
-  children: []
+  onFormSubmit: action('Submit')
 };

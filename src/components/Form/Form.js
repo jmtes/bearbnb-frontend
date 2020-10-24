@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { font } from '../../shared/theme';
 
-const FormContainer = styled.form`
+const FormContainer = styled.div`
   width: ${(props) => props.width};
   display: inline-flex;
   flex-direction: column;
@@ -26,12 +26,34 @@ const FormContainer = styled.form`
   }
 `;
 
-const Form = ({ width, title, titleSize, subtitle, children }) => {
+const StyledForm = styled.form`
+  display: flex;
+  border: 1px solid black;
+`;
+
+const Form = ({
+  width,
+  title,
+  titleSize,
+  buttonText,
+  onFormSubmit,
+  subtitle,
+  children
+}) => {
+  const onSubmit = (event) => {
+    event.preventDefault();
+
+    onFormSubmit();
+  };
+
   return (
     <FormContainer titleSize={titleSize} width={width}>
       <h1>{title}</h1>
       {subtitle && <h2>{subtitle}</h2>}
-      {children}
+      <StyledForm onSubmit={(event) => onSubmit(event)}>
+        {children}
+        <button type="submit">{buttonText}</button>
+      </StyledForm>
     </FormContainer>
   );
 };
@@ -40,13 +62,19 @@ Form.propTypes = {
   width: PropTypes.string,
   title: PropTypes.string.isRequired,
   titleSize: PropTypes.string,
-  subtitle: PropTypes.string
+  subtitle: PropTypes.string,
+  buttonText: PropTypes.string,
+  onSubmit: PropTypes.func
 };
 
 Form.defaultProps = {
   width: '35.75rem',
   titleSize: '1.5rem',
-  subtitle: ''
+  subtitle: '',
+  buttonText: 'Submit',
+  onFormSubmit: () => {
+    console.log('SUBMIT');
+  }
 };
 
 export default Form;
