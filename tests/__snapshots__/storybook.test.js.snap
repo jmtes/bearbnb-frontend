@@ -1,5 +1,244 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Header Default 1`] = `
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.c4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem;
+  border-radius: 24px;
+  background-color: #fff;
+  -webkit-transition: background-color 0.25s ease;
+  transition: background-color 0.25s ease;
+  border: 2px solid transparent;
+}
+
+.c4:hover {
+  background-color: #f4f4f4;
+  cursor: pointer;
+}
+
+.c4 div {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.c5 {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 55px;
+  background: url(https://i.imgur.com/ccPgAlP.png);
+  background-size: cover;
+  display: inline-block;
+}
+
+.c6 {
+  font-size: 1rem;
+  display: inline-block;
+}
+
+.c7 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c8 {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  list-style-type: none;
+  margin-top: 0.25rem;
+  padding: 0;
+  border-radius: 12px;
+  font-weight: 500;
+  text-align: right;
+  width: 95%;
+  border: 1px solid #f4f4f4;
+  overflow: hidden;
+  font-size: 0.875rem;
+  position: absolute;
+  top: 100%;
+  background-color: #fff;
+}
+
+.c8:focus-within {
+  display: inline-block;
+}
+
+.c8 li {
+  padding: 0.75rem 1.25rem 0.75rem 0.75rem;
+  border-bottom: 1px solid #f4f4f4;
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+}
+
+.c8 li:hover {
+  background-color: #f4f4f4;
+}
+
+.c8 li:last-child {
+  border-bottom: 0;
+}
+
+.c9 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #497d6e;
+}
+
+.c0 {
+  max-width: 1920px;
+  padding: 1rem 0.75rem 1rem 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.c1 {
+  font-family: "Fredoka One",cursive;
+  font-size: 2rem;
+}
+
+.c1 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #403c34;
+}
+
+.c2 {
+  height: 2.625rem;
+  width: 2.625rem;
+  position: absolute;
+  left: 50%;
+}
+
+@media (max-width:1024px) {
+  .c6 {
+    display: none;
+  }
+}
+
+@media (max-width:1024px) {
+  .c2 {
+    display: none;
+  }
+}
+
+<header
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      bearbnb
+    </a>
+  </div>
+  <img
+    className="c2"
+    size="2.625rem"
+    src="test-file-stub"
+  />
+  <nav
+    className="c3"
+  >
+    <button
+      aria-controls="user-menu"
+      aria-expanded={false}
+      aria-haspopup="true"
+      aria-label="Show User Menu"
+      className="c4"
+      onClick={[Function]}
+    >
+      <div
+        className="c5"
+      />
+      <div
+        aria-hidden="true"
+        className="c6"
+      >
+        Guest Hibermate
+      </div>
+      <div
+        aria-hidden="true"
+        className="c7"
+      >
+        <img
+          alt="Show user menu"
+          src="test-file-stub"
+        />
+      </div>
+    </button>
+    <ul
+      className="c8"
+      hidden={true}
+      id="user-menu"
+      onBlur={[Function]}
+      onKeyDown={[Function]}
+    >
+      <li>
+        <a
+          className="c9"
+          href="/login"
+          onClick={[Function]}
+        >
+          Log in
+        </a>
+      </li>
+      <li>
+        <a
+          className="c9"
+          href="/register"
+          onClick={[Function]}
+        >
+          Sign up
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+`;
+
 exports[`Storyshots User Logged In 1`] = `
 .c0 {
   display: -webkit-inline-box;
@@ -83,6 +322,9 @@ exports[`Storyshots User Logged In 1`] = `
   border: 1px solid #f4f4f4;
   overflow: hidden;
   font-size: 0.875rem;
+  position: absolute;
+  top: 100%;
+  background-color: #fff;
 }
 
 .c5:focus-within {
@@ -108,6 +350,12 @@ exports[`Storyshots User Logged In 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #497d6e;
+}
+
+@media (max-width:1024px) {
+  .c3 {
+    display: none;
+  }
 }
 
 <nav
@@ -243,6 +491,9 @@ exports[`Storyshots User Not Logged In 1`] = `
   border: 1px solid #f4f4f4;
   overflow: hidden;
   font-size: 0.875rem;
+  position: absolute;
+  top: 100%;
+  background-color: #fff;
 }
 
 .c5:focus-within {
@@ -268,6 +519,12 @@ exports[`Storyshots User Not Logged In 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #497d6e;
+}
+
+@media (max-width:1024px) {
+  .c3 {
+    display: none;
+  }
 }
 
 <nav

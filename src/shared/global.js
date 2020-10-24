@@ -8,6 +8,14 @@ export const fontUrl =
 
 export const rootStyles = css`
   font-size: 16px;
+
+  @media (max-width: 1020px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 510px) {
+    font-size: 12px;
+  }
 `;
 
 export const bodyStyles = css`
