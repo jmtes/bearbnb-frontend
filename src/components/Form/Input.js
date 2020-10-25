@@ -13,7 +13,7 @@ const InputWrapper = styled.div`
   padding: 1.25rem 1.75rem;
   border: 1.15px solid #fff;
   box-shadow: 0px 2px 8px 4px
-    ${(props) => (props.error ? 'rgba(255, 0, 0, 0.2)' : 'rgba(0, 0, 0, 0.1)')};
+    ${(props) => (props.error ? 'rgba(223, 0, 0, 0.2)' : 'rgba(0, 0, 0, 0.1)')};
   font-weight: ${font.weight.medium};
   font-size: 1.125rem;
   transition: box-shadow 0.25s ease;
@@ -22,7 +22,7 @@ const InputWrapper = styled.div`
   &:focus-within {
     box-shadow: 0px 2px 8px 4px
       ${(props) =>
-        props.error ? 'rgba(255, 0, 0, 0.3)' : 'rgba(0, 0, 0, 0.2)'};
+        props.error ? 'rgba(223, 0, 0, 0.3)' : 'rgba(0, 0, 0, 0.2)'};
   }
 
   & label,
@@ -37,7 +37,7 @@ const InputWrapper = styled.div`
   }
 
   & label span {
-    color: red;
+    color: #df0000;
     margin-left: 1rem;
     font-size: 1rem;
   }
