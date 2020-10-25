@@ -1,5 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
+import isEmail from 'validator/lib/isEmail';
 
 import Input from './Input';
 
@@ -24,6 +25,35 @@ Text.args = {
     if (input.length < 2) return 'Must be at least 2 characters';
     else if (input.length > 32) return 'Must not exceed 32 characters';
     else return null;
+  }
+};
+
+export const Email = Template.bind({});
+Email.args = {
+  id: 'email',
+  label: 'Email',
+  type: 'email',
+  placeholder: 'e.g. rick@gmail.com',
+  validateInput: (input) => {
+    action('Input Blur')();
+
+    if (!isEmail(input)) return 'Invalid email address';
+    return null;
+  }
+};
+
+export const Password = Template.bind({});
+Password.args = {
+  id: 'password',
+  label: 'Password',
+  type: 'password',
+  placeholder: 'Must contain at least 8 characters',
+  options: { minLength: 8 },
+  validateInput: (input) => {
+    action('Input Blur')();
+
+    if (input.length < 8) return 'Must contain at least 8 characters';
+    return null;
   }
 };
 
