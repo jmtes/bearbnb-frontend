@@ -65,7 +65,8 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.2.0",
-    "styled-normalize": "^8.0.7"
+    "styled-normalize": "^8.0.7",
+    "validator": "^13.1.17"
   },
   "jest": {
     "setupFilesAfterEnv": [
