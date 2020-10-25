@@ -60,6 +60,10 @@ const InputWrapper = styled.div`
     max-width: 100%;
   }
 
+  & input[type='number'] {
+    width: 15%;
+  }
+
   & input:focus {
     transform: scale(1.1);
   }
@@ -115,7 +119,7 @@ Input.propTypes = {
   label: PropTypes.string.isRequired,
   type: PropTypes.string,
   placeholder: PropTypes.string,
-  validateInput: PropTypes.func.isRequired,
+  validateInput: PropTypes.func,
   options: PropTypes.object,
   width: PropTypes.string,
   borderRadius: PropTypes.string
@@ -124,6 +128,7 @@ Input.propTypes = {
 Input.defaultProps = {
   type: 'text',
   placeholder: '',
+  validateInput: () => {},
   options: {},
   width: '100%',
   borderRadius: '12px'

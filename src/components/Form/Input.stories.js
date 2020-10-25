@@ -16,7 +16,7 @@ Text.args = {
   id: 'name',
   label: 'Name',
   type: 'text',
-  placeholder: 'Enter your name',
+  placeholder: 'e.g. Rick',
   options: { autoComplete: 'off' },
   validateInput: (input) => {
     action('Input Blur')();
@@ -26,3 +26,20 @@ Text.args = {
     else return null;
   }
 };
+
+export const NumberInput = Template.bind({});
+NumberInput.args = {
+  id: 'guests',
+  label: 'Guests',
+  type: 'number',
+  placeholder: '1',
+  options: { min: 1 },
+  validateInput: (input) => {
+    action('Input Blur')();
+
+    if (!Number.isInteger(parseFloat(input, 10)))
+      return 'Number must be an integer';
+    return null;
+  }
+};
+NumberInput.storyName = 'Number';
