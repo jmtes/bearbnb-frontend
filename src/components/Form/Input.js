@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import debounce from 'lodash.debounce';
 
 import { font } from '../../shared/theme';
 
@@ -66,6 +67,7 @@ const InputWrapper = styled.div`
 
   & input:focus {
     transform: scale(1.1);
+    width: 90%;
   }
 
   & ::placeholder {
@@ -86,11 +88,20 @@ const Input = ({
   const [value, setValue] = useState('');
   const [error, setError] = useState(null);
 
+  const debouncedValidate = useCallback(
+    debounce((value) => setError(validateInput(value)), 750),
+    []
+  );
+
   const onChange = (event) => {
     setValue(event.target.value);
+
+    // Wait until user stops typing for long enough before validating input
+    debouncedValidate(event.target.value);
   };
 
   const onBlur = (event) => {
+    // Validate input
     setError(validateInput(event.target.value));
   };
 
