@@ -17,6 +17,12 @@ Text.args = {
   label: 'Name',
   type: 'text',
   placeholder: 'Enter your name',
-  options: { autocomplete: 'off' },
-  onInputChange: action('Input Change')
+  options: { autoComplete: 'off' },
+  validateInput: (input) => {
+    action('Input Blur')();
+
+    if (input.length < 2) return 'Must be at least 2 characters';
+    else if (input.length > 32) return 'Must not exceed 32 characters';
+    else return null;
+  }
 };
