@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import debounce from 'lodash.debounce';
 
+import DayPickerInput from 'react-day-picker/DayPickerInput';
+import 'react-day-picker/lib/style.css';
+
 import { font } from '../../shared/theme';
 
 const InputWrapper = styled.div`
@@ -74,6 +77,15 @@ const InputWrapper = styled.div`
   & ::placeholder {
     color: #9d9480;
   }
+
+  & .DayPickerInput-OverlayWrapper {
+    position: absolute;
+    border-radius: ${(props) => props.borderRadius};
+  }
+
+  & .DayPickerInput-Overlay {
+    border-radius: ${(props) => props.borderRadius};
+  }
 `;
 
 const Input = ({
@@ -87,7 +99,7 @@ const Input = ({
   width,
   borderRadius
 }) => {
-  const [value, setValue] = useState('');
+  const [inputValue, setValue] = useState('');
   const [error, setError] = useState(null);
 
   const debouncedValidate = useCallback(
@@ -118,15 +130,36 @@ const Input = ({
           {error && `input error: ${error}`}
         </span>
       </label>
-      <input
-        type={type}
-        id={id}
-        data-required={required}
-        value={value}
-        placeholder={placeholder}
-        onChange={(event) => onChange(event)}
-        onBlur={(event) => onBlur(event)}
-        {...options}></input>
+      {type === 'date' ? (
+        <DayPickerInput
+          value={inputValue}
+          onDayChange={(day) => {
+            console.log(day);
+            setValue(day);
+          }}
+          inputProps={{
+            id,
+            'data-required': required,
+            autoComplete: 'off',
+            'data-isdate': true
+          }}
+          dayPickerProps={{
+            fromMonth: new Date(),
+            modifiers: { disabled: { before: new Date() } },
+            showOutsideDays: true
+          }}
+        />
+      ) : (
+        <input
+          type={type}
+          id={id}
+          data-required={required}
+          value={inputValue}
+          placeholder={placeholder}
+          onChange={(event) => onChange(event)}
+          onBlur={(event) => onBlur(event)}
+          {...options}></input>
+      )}
     </InputWrapper>
   );
 };
