@@ -49,8 +49,7 @@ const Form = ({
   buttonText,
   onFormSubmit,
   subtitle,
-  children,
-  fields
+  children
 }) => {
   const [error, setError] = useState(null);
 
@@ -79,16 +78,13 @@ const Form = ({
       // Put all input values into object
       const inputValues = {};
 
-      fields.forEach((field) => {
-        let value;
+      inputs.forEach((input) => {
+        // If the input is of type number, convert it into a number
+        const value =
+          input.type === 'number' ? parseFloat(input.value) : input.value;
 
-        const input = event.target.querySelector(`input#${field}`);
-        value = input.type === 'number' ? parseFloat(input.value) : input.value;
-
-        inputValues[field] = value;
+        inputValues[input.id] = value;
       });
-
-      console.log(inputValues);
 
       onFormSubmit(inputValues);
     }
@@ -115,7 +111,6 @@ Form.propTypes = {
   titleSize: PropTypes.string,
   subtitle: PropTypes.string,
   buttonText: PropTypes.string,
-  fieldNames: PropTypes.arrayOf(PropTypes.string.isRequired),
   onFormSubmit: PropTypes.func
 };
 
@@ -124,7 +119,6 @@ Form.defaultProps = {
   titleSize: '1.5rem',
   subtitle: '',
   buttonText: 'Submit',
-  fieldNames: [],
   onFormSubmit: () => {}
 };
 
