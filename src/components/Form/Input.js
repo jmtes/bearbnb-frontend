@@ -8,12 +8,16 @@ import 'react-day-picker/lib/style.css';
 
 import { font } from '../../shared/theme';
 
-const InputWrapper = styled.div`
-  margin: 1rem 0;
+import locationIcon from '../../assets/location_icon.svg';
+import calendarIcon from '../../assets/calendar_icon.svg';
+import personIcon from '../../assets/person_icon.svg';
+
+const Wrapper = styled.div`
   width: ${(props) => props.width};
   border-radius: ${(props) => props.borderRadius};
+  margin: 1rem 0;
   display: flex;
-  flex-direction: column;
+  align-content: center;
   padding: 1.25rem 1.75rem;
   border: 1.15px solid #fff;
   box-shadow: 0px 2px 8px 4px
@@ -22,6 +26,19 @@ const InputWrapper = styled.div`
   font-size: 1.125rem;
   transition: box-shadow 0.25s ease;
   overflow: hidden;
+
+  & .icon {
+    display: flex;
+    align-content: center;
+    margin-right: 1.75rem;
+    width: 10%;
+  }
+
+  & .input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 
   &:focus-within {
     box-shadow: 0px 2px 8px 4px
@@ -117,7 +134,8 @@ const Input = ({
   validateInput,
   options,
   width,
-  borderRadius
+  borderRadius,
+  icon
 }) => {
   const [inputValue, setValue] = useState('');
   const [error, setError] = useState(null);
@@ -140,47 +158,56 @@ const Input = ({
   };
 
   return (
-    <InputWrapper width={width} borderRadius={borderRadius} error={!!error}>
-      <label htmlFor={id}>
-        {label}{' '}
-        <span aria-hidden="true" className="error-msg">
-          {error && error}
-        </span>
-        <span aria-live="assertive" className="visually-hidden">
-          {error && `input error: ${error}`}
-        </span>
-      </label>
-      {type === 'date' ? (
-        <DayPickerInput
-          value={inputValue}
-          onDayChange={(day) => {
-            console.log(day);
-            setValue(day);
-          }}
-          inputProps={{
-            id,
-            'data-required': required,
-            autoComplete: 'off',
-            'data-isdate': true
-          }}
-          dayPickerProps={{
-            fromMonth: new Date(),
-            modifiers: { disabled: { before: new Date() } },
-            showOutsideDays: true
-          }}
-        />
-      ) : (
-        <input
-          type={type}
-          id={id}
-          data-required={required}
-          value={inputValue}
-          placeholder={placeholder}
-          onChange={(event) => onChange(event)}
-          onBlur={(event) => onBlur(event)}
-          {...options}></input>
+    <Wrapper width={width} borderRadius={borderRadius} error={!!error}>
+      {icon && (
+        <div className="icon" aria-hidden="true">
+          {icon === 'location' && <img src={locationIcon} />}
+          {icon === 'calendar' && <img src={calendarIcon} />}
+          {icon === 'person' && <img src={personIcon} />}
+        </div>
       )}
-    </InputWrapper>
+      <div className="input">
+        <label htmlFor={id}>
+          {label}{' '}
+          <span aria-hidden="true" className="error-msg">
+            {error && error}
+          </span>
+          <span aria-live="assertive" className="visually-hidden">
+            {error && `input error: ${error}`}
+          </span>
+        </label>
+        {type === 'date' ? (
+          <DayPickerInput
+            value={inputValue}
+            onDayChange={(day) => {
+              console.log(day);
+              setValue(day);
+            }}
+            inputProps={{
+              id,
+              'data-required': required,
+              autoComplete: 'off',
+              'data-isdate': true
+            }}
+            dayPickerProps={{
+              fromMonth: new Date(),
+              modifiers: { disabled: { before: new Date() } },
+              showOutsideDays: true
+            }}
+          />
+        ) : (
+          <input
+            type={type}
+            id={id}
+            data-required={required}
+            value={inputValue}
+            placeholder={placeholder}
+            onChange={(event) => onChange(event)}
+            onBlur={(event) => onBlur(event)}
+            {...options}></input>
+        )}
+      </div>
+    </Wrapper>
   );
 };
 
@@ -193,7 +220,8 @@ Input.propTypes = {
   validateInput: PropTypes.func,
   options: PropTypes.object,
   width: PropTypes.string,
-  borderRadius: PropTypes.string
+  borderRadius: PropTypes.string,
+  icon: PropTypes.string
 };
 
 Input.defaultProps = {
@@ -203,7 +231,8 @@ Input.defaultProps = {
   validateInput: () => {},
   options: {},
   width: '100%',
-  borderRadius: '12px'
+  borderRadius: '12px',
+  icon: null
 };
 
 export default Input;

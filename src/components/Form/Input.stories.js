@@ -63,6 +63,7 @@ NumberInput.args = {
   label: 'Guests',
   type: 'number',
   placeholder: '1',
+  icon: 'person',
   options: { min: 1 },
   validateInput: (input) => {
     action('Input Blur')();
@@ -80,6 +81,7 @@ DateInput.args = {
   label: 'Checkin',
   type: 'date',
   placeholder: '10-25-2020',
+  icon: 'calendar',
   width: '50%',
   validateInput: () => {
     action('Input Blur')();
