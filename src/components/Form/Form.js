@@ -37,7 +37,7 @@ const FormContainer = styled.div`
 const StyledForm = styled.form`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
 `;
@@ -79,9 +79,14 @@ const Form = ({
       const inputValues = {};
 
       inputs.forEach((input) => {
-        // If the input is of type number, convert it into a number
-        const value =
-          input.type === 'number' ? parseFloat(input.value) : input.value;
+        let value;
+
+        // If input is of type number, convert it into a number
+        if (input.type === 'number') value = parseFloat(input.value);
+        // If input is of type date, convert it to an ISO string
+        else if (input.dataset.isdate)
+          value = new Date(input.value).toISOString();
+        else value = input.value;
 
         inputValues[input.id] = value;
       });
