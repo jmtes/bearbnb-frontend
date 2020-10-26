@@ -86,6 +86,26 @@ const InputWrapper = styled.div`
   & .DayPickerInput-Overlay {
     border-radius: ${(props) => props.borderRadius};
   }
+
+  & .DayPicker-Day--today {
+    color: #478170;
+  }
+
+  .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+    position: relative;
+
+    background-color: #478170;
+    color: #fff;
+  }
+
+  .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
+    background-color: #478170;
+  }
+
+  .DayPicker:not(.DayPicker--interactionDisabled)
+    .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+    background-color: rgba(119, 177, 160, 0.25);
+  }
 `;
 
 const Input = ({
