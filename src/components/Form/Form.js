@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -24,6 +24,14 @@ const FormContainer = styled.div`
     font-size: 1.25rem;
     font-weight: ${font.weight.normal};
   }
+
+  & .form-error {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    color: #df0000;
+    font-weight: ${font.weight.medium};
+  }
 `;
 
 const StyledForm = styled.form`
@@ -41,12 +49,49 @@ const Form = ({
   buttonText,
   onFormSubmit,
   subtitle,
-  children
+  children,
+  fields
 }) => {
+  const [error, setError] = useState(null);
+
   const onSubmit = (event) => {
     event.preventDefault();
 
-    onFormSubmit();
+    const inputs = Array.from(event.target.querySelectorAll('input'));
+    const errors = Array.from(event.target.querySelectorAll('.error-msg'));
+
+    // Check that all required fields are filled in
+    if (inputs.some((input) => input.dataset.required && !input.value)) {
+      const requiredFields = inputs
+        .filter((input) => input.dataset.required && !input.value)
+        .map((input) => input.id.charAt(0).toUpperCase() + input.id.slice(1));
+      setError(
+        `Please fill in the following fields: ${requiredFields.join(', ')}`
+      );
+    }
+    // Check if there are any errors
+    // If so, ask user to fix them
+    else if (errors.some((error) => error.innerText))
+      setError('Please fix all errors before submitting.');
+    else {
+      setError(null);
+
+      // Put all input values into object
+      const inputValues = {};
+
+      fields.forEach((field) => {
+        let value;
+
+        const input = event.target.querySelector(`input#${field}`);
+        value = input.type === 'number' ? parseFloat(input.value) : input.value;
+
+        inputValues[field] = value;
+      });
+
+      console.log(inputValues);
+
+      onFormSubmit(inputValues);
+    }
   };
 
   return (
@@ -55,6 +100,9 @@ const Form = ({
       {subtitle && <h2>{subtitle}</h2>}
       <StyledForm onSubmit={(event) => onSubmit(event)}>
         {children}
+        <span aria-live="assertive" className="form-error">
+          {error}
+        </span>
         <button type="submit">{buttonText}</button>
       </StyledForm>
     </FormContainer>
@@ -67,7 +115,8 @@ Form.propTypes = {
   titleSize: PropTypes.string,
   subtitle: PropTypes.string,
   buttonText: PropTypes.string,
-  onSubmit: PropTypes.func
+  fieldNames: PropTypes.arrayOf(PropTypes.string.isRequired),
+  onFormSubmit: PropTypes.func
 };
 
 Form.defaultProps = {
@@ -75,9 +124,8 @@ Form.defaultProps = {
   titleSize: '1.5rem',
   subtitle: '',
   buttonText: 'Submit',
-  onFormSubmit: () => {
-    console.log('SUBMIT');
-  }
+  fieldNames: [],
+  onFormSubmit: () => {}
 };
 
 export default Form;
