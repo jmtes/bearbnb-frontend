@@ -30,8 +30,9 @@ const Wrapper = styled.div`
   & .icon {
     display: flex;
     align-content: center;
+    justify-content: center;
     margin-right: 1.75rem;
-    width: 10%;
+    width: 2rem;
   }
 
   & .input {
