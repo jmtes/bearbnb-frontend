@@ -61,7 +61,8 @@ const InputWrapper = styled.div`
     max-width: 100%;
   }
 
-  & input[type='number'] {
+  & input[type='number'],
+  & input[type='number']:focus {
     width: 15%;
   }
 
@@ -79,6 +80,7 @@ const Input = ({
   id,
   label,
   type,
+  required,
   placeholder,
   validateInput,
   options,
@@ -108,7 +110,10 @@ const Input = ({
   return (
     <InputWrapper width={width} borderRadius={borderRadius} error={!!error}>
       <label htmlFor={id}>
-        {label} <span aria-hidden="true">{error && error}</span>
+        {label}{' '}
+        <span aria-hidden="true" className="error-msg">
+          {error && error}
+        </span>
         <span aria-live="assertive" className="visually-hidden">
           {error && `input error: ${error}`}
         </span>
@@ -116,6 +121,7 @@ const Input = ({
       <input
         type={type}
         id={id}
+        data-required={required}
         value={value}
         placeholder={placeholder}
         onChange={(event) => onChange(event)}
@@ -129,6 +135,7 @@ Input.propTypes = {
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   type: PropTypes.string,
+  required: PropTypes.bool,
   placeholder: PropTypes.string,
   validateInput: PropTypes.func,
   options: PropTypes.object,
@@ -139,6 +146,7 @@ Input.propTypes = {
 Input.defaultProps = {
   type: 'text',
   placeholder: '',
+  required: true,
   validateInput: () => {},
   options: {},
   width: '100%',
