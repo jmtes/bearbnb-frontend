@@ -73,3 +73,16 @@ NumberInput.args = {
   }
 };
 NumberInput.storyName = 'Number';
+
+export const DateInput = Template.bind({});
+DateInput.args = {
+  id: 'checkin',
+  label: 'Checkin',
+  type: 'date',
+  placeholder: '10-25-2020',
+  width: '50%',
+  validateInput: () => {
+    action('Input Blur')();
+  }
+};
+DateInput.storyName = 'Date';
