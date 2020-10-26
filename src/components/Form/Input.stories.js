@@ -12,12 +12,12 @@ export default {
 
 const Template = (args) => <Input {...args} />;
 
-export const Text = Template.bind({});
-Text.args = {
+export const Name = Template.bind({});
+Name.args = {
   id: 'name',
   label: 'Name',
   type: 'text',
-  placeholder: 'e.g. Rick',
+  placeholder: 'Rick',
   options: { autoComplete: 'off' },
   validateInput: (input) => {
     action('Input Blur')();
@@ -33,7 +33,7 @@ Email.args = {
   id: 'email',
   label: 'Email',
   type: 'email',
-  placeholder: 'e.g. rick@gmail.com',
+  placeholder: 'rick@gmail.com',
   validateInput: (input) => {
     action('Input Blur')();
 
@@ -57,8 +57,59 @@ Password.args = {
   }
 };
 
-export const NumberInput = Template.bind({});
-NumberInput.args = {
+export const ConfirmPassword = Template.bind({});
+ConfirmPassword.args = {
+  id: 'confirm-password',
+  label: 'Confirm Password',
+  type: 'password',
+  placeholder: 'Must match previous field',
+  validateInput: (input) => {
+    action('Input Blur')();
+
+    return null;
+  }
+};
+
+export const Location = Template.bind({});
+Location.args = {
+  id: 'query',
+  label: 'Location',
+  type: 'text',
+  placeholder: 'Los Angeles, California',
+  icon: 'location',
+  validateInput: (input) => {
+    action('Input Blur')();
+
+    return null;
+  }
+};
+
+export const Checkin = Template.bind({});
+Checkin.args = {
+  id: 'checkin',
+  label: 'Checkin',
+  type: 'date',
+  icon: 'calendar',
+  width: '50%',
+  validateInput: () => {
+    action('Input Blur')();
+  }
+};
+
+export const Checkout = Template.bind({});
+Checkout.args = {
+  id: 'checkout',
+  label: 'Checkout',
+  type: 'date',
+  icon: 'calendar',
+  width: '50%',
+  validateInput: () => {
+    action('Input Blur')();
+  }
+};
+
+export const Guests = Template.bind({});
+Guests.args = {
   id: 'guests',
   label: 'Guests',
   type: 'number',
@@ -73,18 +124,3 @@ NumberInput.args = {
     return null;
   }
 };
-NumberInput.storyName = 'Number';
-
-export const DateInput = Template.bind({});
-DateInput.args = {
-  id: 'checkin',
-  label: 'Checkin',
-  type: 'date',
-  placeholder: '10-25-2020',
-  icon: 'calendar',
-  width: '50%',
-  validateInput: () => {
-    action('Input Blur')();
-  }
-};
-DateInput.storyName = 'Date';
