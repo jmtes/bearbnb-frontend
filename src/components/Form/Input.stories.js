@@ -12,6 +12,18 @@ export default {
 
 const Template = (args) => <Input {...args} />;
 
+export const Default = Template.bind({});
+Default.args = {
+  id: 'test',
+  label: 'Input',
+  placeholder: 'Placeholder',
+  validateInput: (input) => {
+    if (!input) return 'Input cannot be empty';
+    else if (input.length < 2) return 'Input is too short';
+    return null;
+  }
+};
+
 export const Name = Template.bind({});
 Name.args = {
   id: 'name',
