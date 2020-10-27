@@ -15,8 +15,8 @@ import personIcon from '../../assets/person_icon.svg';
 const Wrapper = styled.div`
   width: ${(props) => props.width};
   border-radius: ${(props) => props.borderRadius};
-  margin: 1rem 0;
-  display: flex;
+  margin: 0.75rem 0;
+  display: inline-flex;
   align-content: center;
   padding: 1.25rem 1.75rem;
   border: 1.15px solid #fff;
@@ -136,28 +136,13 @@ const Input = ({
   options,
   width,
   borderRadius,
-  icon
+  icon,
+  value,
+  error,
+  onChange,
+  onBlur,
+  firstDay
 }) => {
-  const [inputValue, setValue] = useState('');
-  const [error, setError] = useState(null);
-
-  const debouncedValidate = useCallback(
-    debounce((value) => setError(validateInput(value)), 750),
-    []
-  );
-
-  const onChange = (event) => {
-    setValue(event.target.value);
-
-    // Wait until user stops typing for long enough before validating input
-    debouncedValidate(event.target.value);
-  };
-
-  const onBlur = (event) => {
-    // Validate input
-    setError(validateInput(event.target.value));
-  };
-
   return (
     <Wrapper width={width} borderRadius={borderRadius} error={!!error}>
       {icon && (
@@ -179,10 +164,9 @@ const Input = ({
         </label>
         {type === 'date' ? (
           <DayPickerInput
-            value={inputValue}
+            value={value}
             onDayChange={(day) => {
-              console.log(day);
-              setValue(day);
+              onChange({ target: { id, value: day } });
             }}
             inputProps={{
               id,
@@ -191,8 +175,9 @@ const Input = ({
               'data-isdate': true
             }}
             dayPickerProps={{
-              fromMonth: new Date(),
-              modifiers: { disabled: { before: new Date() } },
+              initialMonth: firstDay,
+              fromMonth: firstDay,
+              modifiers: { disabled: { before: firstDay } },
               showOutsideDays: true
             }}
           />
@@ -201,7 +186,7 @@ const Input = ({
             type={type}
             id={id}
             data-required={required}
-            value={inputValue}
+            value={value}
             placeholder={placeholder}
             onChange={(event) => onChange(event)}
             onBlur={(event) => onBlur(event)}
@@ -222,7 +207,12 @@ Input.propTypes = {
   options: PropTypes.object,
   width: PropTypes.string,
   borderRadius: PropTypes.string,
-  icon: PropTypes.string
+  icon: PropTypes.string,
+  value: PropTypes.any.isRequired,
+  error: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+  onBlur: PropTypes.func.isRequired,
+  firstDay: PropTypes.instanceOf(Date)
 };
 
 Input.defaultProps = {
@@ -233,7 +223,9 @@ Input.defaultProps = {
   options: {},
   width: '100%',
   borderRadius: '12px',
-  icon: null
+  icon: null,
+  error: null,
+  firstDay: null
 };
 
 export default Input;
