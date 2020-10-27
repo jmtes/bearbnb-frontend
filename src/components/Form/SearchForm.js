@@ -104,7 +104,7 @@ const SearchForm = () => {
         error={errors.checkin}
         onChange={(event) => onFieldChange(event)}
         onBlur={(event) => onFieldBlur(event)}
-        firstDay={new Date()}
+        options={{ firstDay: new Date() }}
       />
       <Input
         id="checkout"
@@ -115,7 +115,7 @@ const SearchForm = () => {
         error={errors.checkout}
         onChange={(event) => onFieldChange(event)}
         onBlur={(event) => onFieldBlur(event)}
-        firstDay={values.checkin}
+        options={{ firstDay: values.checkin }}
       />
       <Input
         id="guests"

@@ -130,9 +130,7 @@ const Input = ({
   id,
   label,
   type,
-  required,
   placeholder,
-  validateInput,
   options,
   width,
   borderRadius,
@@ -140,8 +138,7 @@ const Input = ({
   value,
   error,
   onChange,
-  onBlur,
-  firstDay
+  onBlur
 }) => {
   return (
     <Wrapper width={width} borderRadius={borderRadius} error={!!error}>
@@ -170,14 +167,13 @@ const Input = ({
             }}
             inputProps={{
               id,
-              'data-required': required,
               autoComplete: 'off',
               'data-isdate': true
             }}
             dayPickerProps={{
-              initialMonth: firstDay,
-              fromMonth: firstDay,
-              modifiers: { disabled: { before: firstDay } },
+              initialMonth: options.firstDay,
+              fromMonth: options.firstDay,
+              modifiers: { disabled: { before: options.firstDay } },
               showOutsideDays: true
             }}
           />
@@ -185,7 +181,6 @@ const Input = ({
           <input
             type={type}
             id={id}
-            data-required={required}
             value={value}
             placeholder={placeholder}
             onChange={(event) => onChange(event)}
@@ -201,9 +196,7 @@ Input.propTypes = {
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   type: PropTypes.string,
-  required: PropTypes.bool,
   placeholder: PropTypes.string,
-  validateInput: PropTypes.func,
   options: PropTypes.object,
   width: PropTypes.string,
   borderRadius: PropTypes.string,
@@ -211,21 +204,17 @@ Input.propTypes = {
   value: PropTypes.any.isRequired,
   error: PropTypes.string,
   onChange: PropTypes.func.isRequired,
-  onBlur: PropTypes.func.isRequired,
-  firstDay: PropTypes.instanceOf(Date)
+  onBlur: PropTypes.func.isRequired
 };
 
 Input.defaultProps = {
   type: 'text',
   placeholder: '',
-  required: true,
-  validateInput: () => {},
   options: {},
   width: '100%',
   borderRadius: '12px',
   icon: null,
-  error: null,
-  firstDay: null
+  error: null
 };
 
 export default Input;
