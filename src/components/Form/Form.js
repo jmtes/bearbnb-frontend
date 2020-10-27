@@ -6,9 +6,9 @@ import { font } from '../../shared/theme';
 
 const FormContainer = styled.div`
   width: ${(props) => props.width};
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   align-items: center;
   padding: 2rem 4rem;
   border: 0.5px solid #fff;
@@ -23,6 +23,8 @@ const FormContainer = styled.div`
   & h2 {
     font-size: 1.25rem;
     font-weight: ${font.weight.normal};
+    text-align: center;
+    margin-top: 0.1rem;
   }
 
   & .form-error {
