@@ -7,7 +7,62 @@ import Input from './Input';
 export default {
   title: 'Forms/Input',
   component: Input,
-  decorators: [(story) => <div style={{ width: '500px' }}>{story()}</div>]
+  decorators: [(story) => <div style={{ width: '500px' }}>{story()}</div>],
+  parameters: {
+    docs: {
+      description: {
+        component: 'A component that accepts and validates user input.'
+      }
+    }
+  },
+  argTypes: {
+    id: {
+      description:
+        'The unique id with which the input should be identified. Parent Form component should have a corresponding key in both its `values` and `errors` states in order for state changes and validation to work.'
+    },
+    label: {
+      description: 'The text for the input label.'
+    },
+    type: {
+      description:
+        'The type of input to be rendered, e.g. `text`, `number`, `date`, etc.'
+    },
+    value: {
+      description:
+        'The value of the component. Should be a piece of state passed down from parent Form component.'
+    },
+    error: {
+      description:
+        'The validation errors of the component, should there be any. Should be a piece of state passed down from parent Form component.'
+    },
+    onChange: {
+      description:
+        "Handler for changes to input. Should accept an event, set `values` in the parent Form component's state to the event target (the input's) value, and validate said value, setting `errors` in the parent Form component's state if invalid."
+    },
+    onBlur: {
+      description:
+        "Handler for input blur. Should accept an event and validate the event target (the input's) value, setting `errors` in the parent Form component's state if invalid."
+    },
+    placeholder: {
+      description: 'The input placeholder text.'
+    },
+    options: {
+      description:
+        'Miscellaneous options to apply to the input that are not universally applicable to all input types, e.g. `min` for `number` inputs. Be sure to use JSX attribute names, e.g. `autoComplete` rather than `autocomplete`.'
+    },
+    width: {
+      description:
+        'The width of the rendered input component, e.g. `4rem`, `200px`, `100%`.'
+    },
+    borderRadius: {
+      description:
+        'The border radius of the rendered input component, e.g. `24px`.'
+    },
+    icon: {
+      description:
+        'The optional icon toinclude in the rendered input component. Accepted values are `location`, `calendar`, and `person`.'
+    }
+  }
 };
 
 const Template = (args) => <Input {...args} />;
