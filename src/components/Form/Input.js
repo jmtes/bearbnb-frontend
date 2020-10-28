@@ -140,9 +140,11 @@ const Input = ({
   onChange,
   onBlur
 }) => {
+  const validIcons = ['location', 'calendar', 'person'];
+
   return (
     <Wrapper width={width} borderRadius={borderRadius} error={!!error}>
-      {icon && (
+      {validIcons.includes(icon) && (
         <div className="icon" aria-hidden="true">
           {icon === 'location' && <img src={locationIcon} />}
           {icon === 'calendar' && <img src={calendarIcon} />}
@@ -151,7 +153,7 @@ const Input = ({
       )}
       <div className="input">
         <label htmlFor={id}>
-          {label}{' '}
+          {label}
           <span aria-hidden="true" className="error-msg">
             {error && error}
           </span>
@@ -201,10 +203,10 @@ Input.propTypes = {
   width: PropTypes.string,
   borderRadius: PropTypes.string,
   icon: PropTypes.string,
-  value: PropTypes.any.isRequired,
+  value: PropTypes.any,
   error: PropTypes.string,
-  onChange: PropTypes.func.isRequired,
-  onBlur: PropTypes.func.isRequired
+  onChange: PropTypes.func,
+  onBlur: PropTypes.func
 };
 
 Input.defaultProps = {
@@ -214,7 +216,10 @@ Input.defaultProps = {
   width: '100%',
   borderRadius: '12px',
   icon: null,
-  error: null
+  value: '',
+  error: null,
+  onChange: () => {},
+  onBlur: () => {}
 };
 
 export default Input;
