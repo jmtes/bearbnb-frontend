@@ -54,6 +54,2906 @@ exports[`Storyshots Footer Default 1`] = `
 </footer>
 `;
 
+exports[`Storyshots Forms/Forms Default 1`] = `
+.c0 {
+  width: 35.75rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 2rem 4rem;
+  border: 0.5px solid #fff;
+  border-radius: 36px;
+  box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.05);
+}
+
+.c0 h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.c0 h2 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 0.1rem;
+}
+
+.c0 .form-error {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  color: #df0000;
+  font-weight: 500;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width:1020px) {
+
+}
+
+@media (max-width:510px) {
+
+}
+
+<div
+  className="c0"
+  width="35.75rem"
+>
+  <h1>
+    Form Title
+  </h1>
+  
+  <form
+    className="c1"
+    onSubmit={[Function]}
+  >
+    <button
+      aria-disabled={true}
+      disabled={true}
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Storyshots Forms/Input Checkin 1`] = `
+.c0 {
+  width: 50%;
+  border-radius: 12px;
+  margin: 0.75rem 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  padding: 1.25rem 1.75rem;
+  border: 1.15px solid #fff;
+  box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.1);
+  font-weight: 500;
+  font-size: 1.125rem;
+  -webkit-transition: box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.c0 .icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: 1.75rem;
+  width: 2rem;
+}
+
+.c0 .input {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c0:focus-within {
+  box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.2);
+}
+
+.c0 label,
+.c0 input,
+.c0 ::-webkit-input-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 ::-moz-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 :-ms-input-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 ::placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label {
+  -webkit-letter-spacing: 0.06rem;
+  -moz-letter-spacing: 0.06rem;
+  -ms-letter-spacing: 0.06rem;
+  letter-spacing: 0.06rem;
+  color: #605c54;
+}
+
+.c0 label span {
+  color: #df0000;
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+.c0 input,
+.c0 ::-webkit-input-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 ::-moz-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 :-ms-input-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 ::placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input {
+  border: 0;
+  padding: 0;
+  -webkit-transition: all 0.075s linear;
+  transition: all 0.075s linear;
+  color: #403c34;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transform-origin: left center;
+  -ms-transform-origin: left center;
+  transform-origin: left center;
+  max-width: 100%;
+}
+
+.c0 input[type='number'],
+.c0 input[type='number']:focus {
+  width: 15%;
+}
+
+.c0 input:focus {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  width: 90%;
+}
+
+.c0 ::-webkit-input-placeholder {
+  color: #9d9480;
+}
+
+.c0 ::-moz-placeholder {
+  color: #9d9480;
+}
+
+.c0 :-ms-input-placeholder {
+  color: #9d9480;
+}
+
+.c0 ::placeholder {
+  color: #9d9480;
+}
+
+.c0 .DayPickerInput-OverlayWrapper {
+  position: absolute;
+  border-radius: 12px;
+}
+
+.c0 .DayPickerInput-Overlay {
+  border-radius: 12px;
+}
+
+.c0 .DayPicker-Day--today {
+  color: #478170;
+}
+
+.c0 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+  position: relative;
+  background-color: #478170;
+  color: #fff;
+}
+
+.c0 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
+  background-color: #478170;
+}
+
+.c0 .DayPicker:not(.DayPicker--interactionDisabled) .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+  background-color: rgba(119,177,160,0.25);
+}
+
+@media (max-width:1020px) {
+
+}
+
+@media (max-width:510px) {
+
+}
+
+<div
+  style={
+    Object {
+      "width": "500px",
+    }
+  }
+>
+  <div
+    className="c0"
+    width="50%"
+  >
+    <div
+      aria-hidden="true"
+      className="icon"
+    >
+      <img
+        src="test-file-stub"
+      />
+    </div>
+    <div
+      className="input"
+    >
+      <label
+        htmlFor="checkin"
+      >
+        Checkin
+        <span
+          aria-hidden="true"
+          className="error-msg"
+        />
+        <span
+          aria-live="assertive"
+          className="visually-hidden"
+        />
+      </label>
+      <div
+        className="DayPickerInput"
+      >
+        <input
+          autoComplete="off"
+          data-isdate={true}
+          id="checkin"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          placeholder="YYYY-M-D"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Forms/Input Checkout 1`] = `
+.c0 {
+  width: 50%;
+  border-radius: 12px;
+  margin: 0.75rem 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  padding: 1.25rem 1.75rem;
+  border: 1.15px solid #fff;
+  box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.1);
+  font-weight: 500;
+  font-size: 1.125rem;
+  -webkit-transition: box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.c0 .icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: 1.75rem;
+  width: 2rem;
+}
+
+.c0 .input {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c0:focus-within {
+  box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.2);
+}
+
+.c0 label,
+.c0 input,
+.c0 ::-webkit-input-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 ::-moz-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 :-ms-input-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 ::placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label {
+  -webkit-letter-spacing: 0.06rem;
+  -moz-letter-spacing: 0.06rem;
+  -ms-letter-spacing: 0.06rem;
+  letter-spacing: 0.06rem;
+  color: #605c54;
+}
+
+.c0 label span {
+  color: #df0000;
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+.c0 input,
+.c0 ::-webkit-input-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 ::-moz-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 :-ms-input-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 ::placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input {
+  border: 0;
+  padding: 0;
+  -webkit-transition: all 0.075s linear;
+  transition: all 0.075s linear;
+  color: #403c34;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transform-origin: left center;
+  -ms-transform-origin: left center;
+  transform-origin: left center;
+  max-width: 100%;
+}
+
+.c0 input[type='number'],
+.c0 input[type='number']:focus {
+  width: 15%;
+}
+
+.c0 input:focus {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  width: 90%;
+}
+
+.c0 ::-webkit-input-placeholder {
+  color: #9d9480;
+}
+
+.c0 ::-moz-placeholder {
+  color: #9d9480;
+}
+
+.c0 :-ms-input-placeholder {
+  color: #9d9480;
+}
+
+.c0 ::placeholder {
+  color: #9d9480;
+}
+
+.c0 .DayPickerInput-OverlayWrapper {
+  position: absolute;
+  border-radius: 12px;
+}
+
+.c0 .DayPickerInput-Overlay {
+  border-radius: 12px;
+}
+
+.c0 .DayPicker-Day--today {
+  color: #478170;
+}
+
+.c0 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+  position: relative;
+  background-color: #478170;
+  color: #fff;
+}
+
+.c0 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
+  background-color: #478170;
+}
+
+.c0 .DayPicker:not(.DayPicker--interactionDisabled) .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+  background-color: rgba(119,177,160,0.25);
+}
+
+@media (max-width:1020px) {
+
+}
+
+@media (max-width:510px) {
+
+}
+
+<div
+  style={
+    Object {
+      "width": "500px",
+    }
+  }
+>
+  <div
+    className="c0"
+    width="50%"
+  >
+    <div
+      aria-hidden="true"
+      className="icon"
+    >
+      <img
+        src="test-file-stub"
+      />
+    </div>
+    <div
+      className="input"
+    >
+      <label
+        htmlFor="checkout"
+      >
+        Checkout
+        <span
+          aria-hidden="true"
+          className="error-msg"
+        />
+        <span
+          aria-live="assertive"
+          className="visually-hidden"
+        />
+      </label>
+      <div
+        className="DayPickerInput"
+      >
+        <input
+          autoComplete="off"
+          data-isdate={true}
+          id="checkout"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          placeholder="YYYY-M-D"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Forms/Input Confirm Password 1`] = `
+.c0 {
+  width: 100%;
+  border-radius: 12px;
+  margin: 0.75rem 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  padding: 1.25rem 1.75rem;
+  border: 1.15px solid #fff;
+  box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.1);
+  font-weight: 500;
+  font-size: 1.125rem;
+  -webkit-transition: box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.c0 .icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: 1.75rem;
+  width: 2rem;
+}
+
+.c0 .input {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c0:focus-within {
+  box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.2);
+}
+
+.c0 label,
+.c0 input,
+.c0 ::-webkit-input-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 ::-moz-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 :-ms-input-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 ::placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label {
+  -webkit-letter-spacing: 0.06rem;
+  -moz-letter-spacing: 0.06rem;
+  -ms-letter-spacing: 0.06rem;
+  letter-spacing: 0.06rem;
+  color: #605c54;
+}
+
+.c0 label span {
+  color: #df0000;
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+.c0 input,
+.c0 ::-webkit-input-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 ::-moz-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 :-ms-input-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 ::placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input {
+  border: 0;
+  padding: 0;
+  -webkit-transition: all 0.075s linear;
+  transition: all 0.075s linear;
+  color: #403c34;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transform-origin: left center;
+  -ms-transform-origin: left center;
+  transform-origin: left center;
+  max-width: 100%;
+}
+
+.c0 input[type='number'],
+.c0 input[type='number']:focus {
+  width: 15%;
+}
+
+.c0 input:focus {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  width: 90%;
+}
+
+.c0 ::-webkit-input-placeholder {
+  color: #9d9480;
+}
+
+.c0 ::-moz-placeholder {
+  color: #9d9480;
+}
+
+.c0 :-ms-input-placeholder {
+  color: #9d9480;
+}
+
+.c0 ::placeholder {
+  color: #9d9480;
+}
+
+.c0 .DayPickerInput-OverlayWrapper {
+  position: absolute;
+  border-radius: 12px;
+}
+
+.c0 .DayPickerInput-Overlay {
+  border-radius: 12px;
+}
+
+.c0 .DayPicker-Day--today {
+  color: #478170;
+}
+
+.c0 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+  position: relative;
+  background-color: #478170;
+  color: #fff;
+}
+
+.c0 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
+  background-color: #478170;
+}
+
+.c0 .DayPicker:not(.DayPicker--interactionDisabled) .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+  background-color: rgba(119,177,160,0.25);
+}
+
+@media (max-width:1020px) {
+
+}
+
+@media (max-width:510px) {
+
+}
+
+<div
+  style={
+    Object {
+      "width": "500px",
+    }
+  }
+>
+  <div
+    className="c0"
+    width="100%"
+  >
+    <div
+      className="input"
+    >
+      <label
+        htmlFor="confirm-password"
+      >
+        Confirm Password
+        <span
+          aria-hidden="true"
+          className="error-msg"
+        />
+        <span
+          aria-live="assertive"
+          className="visually-hidden"
+        />
+      </label>
+      <input
+        id="confirm-password"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Must match previous field"
+        type="password"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Forms/Input Default 1`] = `
+.c0 {
+  width: 100%;
+  border-radius: 12px;
+  margin: 0.75rem 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  padding: 1.25rem 1.75rem;
+  border: 1.15px solid #fff;
+  box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.1);
+  font-weight: 500;
+  font-size: 1.125rem;
+  -webkit-transition: box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.c0 .icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: 1.75rem;
+  width: 2rem;
+}
+
+.c0 .input {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c0:focus-within {
+  box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.2);
+}
+
+.c0 label,
+.c0 input,
+.c0 ::-webkit-input-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 ::-moz-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 :-ms-input-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 ::placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label {
+  -webkit-letter-spacing: 0.06rem;
+  -moz-letter-spacing: 0.06rem;
+  -ms-letter-spacing: 0.06rem;
+  letter-spacing: 0.06rem;
+  color: #605c54;
+}
+
+.c0 label span {
+  color: #df0000;
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+.c0 input,
+.c0 ::-webkit-input-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 ::-moz-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 :-ms-input-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 ::placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input {
+  border: 0;
+  padding: 0;
+  -webkit-transition: all 0.075s linear;
+  transition: all 0.075s linear;
+  color: #403c34;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transform-origin: left center;
+  -ms-transform-origin: left center;
+  transform-origin: left center;
+  max-width: 100%;
+}
+
+.c0 input[type='number'],
+.c0 input[type='number']:focus {
+  width: 15%;
+}
+
+.c0 input:focus {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  width: 90%;
+}
+
+.c0 ::-webkit-input-placeholder {
+  color: #9d9480;
+}
+
+.c0 ::-moz-placeholder {
+  color: #9d9480;
+}
+
+.c0 :-ms-input-placeholder {
+  color: #9d9480;
+}
+
+.c0 ::placeholder {
+  color: #9d9480;
+}
+
+.c0 .DayPickerInput-OverlayWrapper {
+  position: absolute;
+  border-radius: 12px;
+}
+
+.c0 .DayPickerInput-Overlay {
+  border-radius: 12px;
+}
+
+.c0 .DayPicker-Day--today {
+  color: #478170;
+}
+
+.c0 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+  position: relative;
+  background-color: #478170;
+  color: #fff;
+}
+
+.c0 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
+  background-color: #478170;
+}
+
+.c0 .DayPicker:not(.DayPicker--interactionDisabled) .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+  background-color: rgba(119,177,160,0.25);
+}
+
+@media (max-width:1020px) {
+
+}
+
+@media (max-width:510px) {
+
+}
+
+<div
+  style={
+    Object {
+      "width": "500px",
+    }
+  }
+>
+  <div
+    className="c0"
+    width="100%"
+  >
+    <div
+      className="input"
+    >
+      <label
+        htmlFor="test"
+      >
+        Input
+        <span
+          aria-hidden="true"
+          className="error-msg"
+        />
+        <span
+          aria-live="assertive"
+          className="visually-hidden"
+        />
+      </label>
+      <input
+        id="test"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Placeholder"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Forms/Input Email 1`] = `
+.c0 {
+  width: 100%;
+  border-radius: 12px;
+  margin: 0.75rem 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  padding: 1.25rem 1.75rem;
+  border: 1.15px solid #fff;
+  box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.1);
+  font-weight: 500;
+  font-size: 1.125rem;
+  -webkit-transition: box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.c0 .icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: 1.75rem;
+  width: 2rem;
+}
+
+.c0 .input {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c0:focus-within {
+  box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.2);
+}
+
+.c0 label,
+.c0 input,
+.c0 ::-webkit-input-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 ::-moz-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 :-ms-input-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 ::placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label {
+  -webkit-letter-spacing: 0.06rem;
+  -moz-letter-spacing: 0.06rem;
+  -ms-letter-spacing: 0.06rem;
+  letter-spacing: 0.06rem;
+  color: #605c54;
+}
+
+.c0 label span {
+  color: #df0000;
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+.c0 input,
+.c0 ::-webkit-input-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 ::-moz-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 :-ms-input-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 ::placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input {
+  border: 0;
+  padding: 0;
+  -webkit-transition: all 0.075s linear;
+  transition: all 0.075s linear;
+  color: #403c34;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transform-origin: left center;
+  -ms-transform-origin: left center;
+  transform-origin: left center;
+  max-width: 100%;
+}
+
+.c0 input[type='number'],
+.c0 input[type='number']:focus {
+  width: 15%;
+}
+
+.c0 input:focus {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  width: 90%;
+}
+
+.c0 ::-webkit-input-placeholder {
+  color: #9d9480;
+}
+
+.c0 ::-moz-placeholder {
+  color: #9d9480;
+}
+
+.c0 :-ms-input-placeholder {
+  color: #9d9480;
+}
+
+.c0 ::placeholder {
+  color: #9d9480;
+}
+
+.c0 .DayPickerInput-OverlayWrapper {
+  position: absolute;
+  border-radius: 12px;
+}
+
+.c0 .DayPickerInput-Overlay {
+  border-radius: 12px;
+}
+
+.c0 .DayPicker-Day--today {
+  color: #478170;
+}
+
+.c0 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+  position: relative;
+  background-color: #478170;
+  color: #fff;
+}
+
+.c0 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
+  background-color: #478170;
+}
+
+.c0 .DayPicker:not(.DayPicker--interactionDisabled) .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+  background-color: rgba(119,177,160,0.25);
+}
+
+@media (max-width:1020px) {
+
+}
+
+@media (max-width:510px) {
+
+}
+
+<div
+  style={
+    Object {
+      "width": "500px",
+    }
+  }
+>
+  <div
+    className="c0"
+    width="100%"
+  >
+    <div
+      className="input"
+    >
+      <label
+        htmlFor="email"
+      >
+        Email
+        <span
+          aria-hidden="true"
+          className="error-msg"
+        />
+        <span
+          aria-live="assertive"
+          className="visually-hidden"
+        />
+      </label>
+      <input
+        id="email"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="rick@gmail.com"
+        type="email"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Forms/Input Guests 1`] = `
+.c0 {
+  width: 100%;
+  border-radius: 12px;
+  margin: 0.75rem 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  padding: 1.25rem 1.75rem;
+  border: 1.15px solid #fff;
+  box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.1);
+  font-weight: 500;
+  font-size: 1.125rem;
+  -webkit-transition: box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.c0 .icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: 1.75rem;
+  width: 2rem;
+}
+
+.c0 .input {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c0:focus-within {
+  box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.2);
+}
+
+.c0 label,
+.c0 input,
+.c0 ::-webkit-input-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 ::-moz-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 :-ms-input-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 ::placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label {
+  -webkit-letter-spacing: 0.06rem;
+  -moz-letter-spacing: 0.06rem;
+  -ms-letter-spacing: 0.06rem;
+  letter-spacing: 0.06rem;
+  color: #605c54;
+}
+
+.c0 label span {
+  color: #df0000;
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+.c0 input,
+.c0 ::-webkit-input-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 ::-moz-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 :-ms-input-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 ::placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input {
+  border: 0;
+  padding: 0;
+  -webkit-transition: all 0.075s linear;
+  transition: all 0.075s linear;
+  color: #403c34;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transform-origin: left center;
+  -ms-transform-origin: left center;
+  transform-origin: left center;
+  max-width: 100%;
+}
+
+.c0 input[type='number'],
+.c0 input[type='number']:focus {
+  width: 15%;
+}
+
+.c0 input:focus {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  width: 90%;
+}
+
+.c0 ::-webkit-input-placeholder {
+  color: #9d9480;
+}
+
+.c0 ::-moz-placeholder {
+  color: #9d9480;
+}
+
+.c0 :-ms-input-placeholder {
+  color: #9d9480;
+}
+
+.c0 ::placeholder {
+  color: #9d9480;
+}
+
+.c0 .DayPickerInput-OverlayWrapper {
+  position: absolute;
+  border-radius: 12px;
+}
+
+.c0 .DayPickerInput-Overlay {
+  border-radius: 12px;
+}
+
+.c0 .DayPicker-Day--today {
+  color: #478170;
+}
+
+.c0 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+  position: relative;
+  background-color: #478170;
+  color: #fff;
+}
+
+.c0 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
+  background-color: #478170;
+}
+
+.c0 .DayPicker:not(.DayPicker--interactionDisabled) .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+  background-color: rgba(119,177,160,0.25);
+}
+
+@media (max-width:1020px) {
+
+}
+
+@media (max-width:510px) {
+
+}
+
+<div
+  style={
+    Object {
+      "width": "500px",
+    }
+  }
+>
+  <div
+    className="c0"
+    width="100%"
+  >
+    <div
+      aria-hidden="true"
+      className="icon"
+    >
+      <img
+        src="test-file-stub"
+      />
+    </div>
+    <div
+      className="input"
+    >
+      <label
+        htmlFor="guests"
+      >
+        Guests
+        <span
+          aria-hidden="true"
+          className="error-msg"
+        />
+        <span
+          aria-live="assertive"
+          className="visually-hidden"
+        />
+      </label>
+      <input
+        id="guests"
+        min={1}
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="1"
+        type="number"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Forms/Input Location 1`] = `
+.c0 {
+  width: 100%;
+  border-radius: 12px;
+  margin: 0.75rem 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  padding: 1.25rem 1.75rem;
+  border: 1.15px solid #fff;
+  box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.1);
+  font-weight: 500;
+  font-size: 1.125rem;
+  -webkit-transition: box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.c0 .icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: 1.75rem;
+  width: 2rem;
+}
+
+.c0 .input {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c0:focus-within {
+  box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.2);
+}
+
+.c0 label,
+.c0 input,
+.c0 ::-webkit-input-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 ::-moz-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 :-ms-input-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 ::placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label {
+  -webkit-letter-spacing: 0.06rem;
+  -moz-letter-spacing: 0.06rem;
+  -ms-letter-spacing: 0.06rem;
+  letter-spacing: 0.06rem;
+  color: #605c54;
+}
+
+.c0 label span {
+  color: #df0000;
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+.c0 input,
+.c0 ::-webkit-input-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 ::-moz-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 :-ms-input-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 ::placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input {
+  border: 0;
+  padding: 0;
+  -webkit-transition: all 0.075s linear;
+  transition: all 0.075s linear;
+  color: #403c34;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transform-origin: left center;
+  -ms-transform-origin: left center;
+  transform-origin: left center;
+  max-width: 100%;
+}
+
+.c0 input[type='number'],
+.c0 input[type='number']:focus {
+  width: 15%;
+}
+
+.c0 input:focus {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  width: 90%;
+}
+
+.c0 ::-webkit-input-placeholder {
+  color: #9d9480;
+}
+
+.c0 ::-moz-placeholder {
+  color: #9d9480;
+}
+
+.c0 :-ms-input-placeholder {
+  color: #9d9480;
+}
+
+.c0 ::placeholder {
+  color: #9d9480;
+}
+
+.c0 .DayPickerInput-OverlayWrapper {
+  position: absolute;
+  border-radius: 12px;
+}
+
+.c0 .DayPickerInput-Overlay {
+  border-radius: 12px;
+}
+
+.c0 .DayPicker-Day--today {
+  color: #478170;
+}
+
+.c0 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+  position: relative;
+  background-color: #478170;
+  color: #fff;
+}
+
+.c0 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
+  background-color: #478170;
+}
+
+.c0 .DayPicker:not(.DayPicker--interactionDisabled) .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+  background-color: rgba(119,177,160,0.25);
+}
+
+@media (max-width:1020px) {
+
+}
+
+@media (max-width:510px) {
+
+}
+
+<div
+  style={
+    Object {
+      "width": "500px",
+    }
+  }
+>
+  <div
+    className="c0"
+    width="100%"
+  >
+    <div
+      aria-hidden="true"
+      className="icon"
+    >
+      <img
+        src="test-file-stub"
+      />
+    </div>
+    <div
+      className="input"
+    >
+      <label
+        htmlFor="query"
+      >
+        Location
+        <span
+          aria-hidden="true"
+          className="error-msg"
+        />
+        <span
+          aria-live="assertive"
+          className="visually-hidden"
+        />
+      </label>
+      <input
+        id="query"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Los Angeles, California"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Forms/Input Name 1`] = `
+.c0 {
+  width: 100%;
+  border-radius: 12px;
+  margin: 0.75rem 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  padding: 1.25rem 1.75rem;
+  border: 1.15px solid #fff;
+  box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.1);
+  font-weight: 500;
+  font-size: 1.125rem;
+  -webkit-transition: box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.c0 .icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: 1.75rem;
+  width: 2rem;
+}
+
+.c0 .input {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c0:focus-within {
+  box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.2);
+}
+
+.c0 label,
+.c0 input,
+.c0 ::-webkit-input-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 ::-moz-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 :-ms-input-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 ::placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label {
+  -webkit-letter-spacing: 0.06rem;
+  -moz-letter-spacing: 0.06rem;
+  -ms-letter-spacing: 0.06rem;
+  letter-spacing: 0.06rem;
+  color: #605c54;
+}
+
+.c0 label span {
+  color: #df0000;
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+.c0 input,
+.c0 ::-webkit-input-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 ::-moz-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 :-ms-input-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 ::placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input {
+  border: 0;
+  padding: 0;
+  -webkit-transition: all 0.075s linear;
+  transition: all 0.075s linear;
+  color: #403c34;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transform-origin: left center;
+  -ms-transform-origin: left center;
+  transform-origin: left center;
+  max-width: 100%;
+}
+
+.c0 input[type='number'],
+.c0 input[type='number']:focus {
+  width: 15%;
+}
+
+.c0 input:focus {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  width: 90%;
+}
+
+.c0 ::-webkit-input-placeholder {
+  color: #9d9480;
+}
+
+.c0 ::-moz-placeholder {
+  color: #9d9480;
+}
+
+.c0 :-ms-input-placeholder {
+  color: #9d9480;
+}
+
+.c0 ::placeholder {
+  color: #9d9480;
+}
+
+.c0 .DayPickerInput-OverlayWrapper {
+  position: absolute;
+  border-radius: 12px;
+}
+
+.c0 .DayPickerInput-Overlay {
+  border-radius: 12px;
+}
+
+.c0 .DayPicker-Day--today {
+  color: #478170;
+}
+
+.c0 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+  position: relative;
+  background-color: #478170;
+  color: #fff;
+}
+
+.c0 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
+  background-color: #478170;
+}
+
+.c0 .DayPicker:not(.DayPicker--interactionDisabled) .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+  background-color: rgba(119,177,160,0.25);
+}
+
+@media (max-width:1020px) {
+
+}
+
+@media (max-width:510px) {
+
+}
+
+<div
+  style={
+    Object {
+      "width": "500px",
+    }
+  }
+>
+  <div
+    className="c0"
+    width="100%"
+  >
+    <div
+      className="input"
+    >
+      <label
+        htmlFor="name"
+      >
+        Name
+        <span
+          aria-hidden="true"
+          className="error-msg"
+        />
+        <span
+          aria-live="assertive"
+          className="visually-hidden"
+        />
+      </label>
+      <input
+        autoComplete="off"
+        id="name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Rick"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Forms/Input Password 1`] = `
+.c0 {
+  width: 100%;
+  border-radius: 12px;
+  margin: 0.75rem 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  padding: 1.25rem 1.75rem;
+  border: 1.15px solid #fff;
+  box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.1);
+  font-weight: 500;
+  font-size: 1.125rem;
+  -webkit-transition: box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.c0 .icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: 1.75rem;
+  width: 2rem;
+}
+
+.c0 .input {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c0:focus-within {
+  box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.2);
+}
+
+.c0 label,
+.c0 input,
+.c0 ::-webkit-input-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 ::-moz-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 :-ms-input-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label,
+.c0 input,
+.c0 ::placeholder {
+  margin: 0.15rem 0;
+}
+
+.c0 label {
+  -webkit-letter-spacing: 0.06rem;
+  -moz-letter-spacing: 0.06rem;
+  -ms-letter-spacing: 0.06rem;
+  letter-spacing: 0.06rem;
+  color: #605c54;
+}
+
+.c0 label span {
+  color: #df0000;
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+.c0 input,
+.c0 ::-webkit-input-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 ::-moz-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 :-ms-input-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input,
+.c0 ::placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c0 input {
+  border: 0;
+  padding: 0;
+  -webkit-transition: all 0.075s linear;
+  transition: all 0.075s linear;
+  color: #403c34;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transform-origin: left center;
+  -ms-transform-origin: left center;
+  transform-origin: left center;
+  max-width: 100%;
+}
+
+.c0 input[type='number'],
+.c0 input[type='number']:focus {
+  width: 15%;
+}
+
+.c0 input:focus {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  width: 90%;
+}
+
+.c0 ::-webkit-input-placeholder {
+  color: #9d9480;
+}
+
+.c0 ::-moz-placeholder {
+  color: #9d9480;
+}
+
+.c0 :-ms-input-placeholder {
+  color: #9d9480;
+}
+
+.c0 ::placeholder {
+  color: #9d9480;
+}
+
+.c0 .DayPickerInput-OverlayWrapper {
+  position: absolute;
+  border-radius: 12px;
+}
+
+.c0 .DayPickerInput-Overlay {
+  border-radius: 12px;
+}
+
+.c0 .DayPicker-Day--today {
+  color: #478170;
+}
+
+.c0 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+  position: relative;
+  background-color: #478170;
+  color: #fff;
+}
+
+.c0 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
+  background-color: #478170;
+}
+
+.c0 .DayPicker:not(.DayPicker--interactionDisabled) .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+  background-color: rgba(119,177,160,0.25);
+}
+
+@media (max-width:1020px) {
+
+}
+
+@media (max-width:510px) {
+
+}
+
+<div
+  style={
+    Object {
+      "width": "500px",
+    }
+  }
+>
+  <div
+    className="c0"
+    width="100%"
+  >
+    <div
+      className="input"
+    >
+      <label
+        htmlFor="password"
+      >
+        Password
+        <span
+          aria-hidden="true"
+          className="error-msg"
+        />
+        <span
+          aria-live="assertive"
+          className="visually-hidden"
+        />
+      </label>
+      <input
+        id="password"
+        minLength={8}
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Must contain at least 8 characters"
+        type="password"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Forms/SearchForm Default 1`] = `
+.c0 {
+  width: 35.75rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 2rem 4rem;
+  border: 0.5px solid #fff;
+  border-radius: 36px;
+  box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.05);
+}
+
+.c0 h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.c0 h2 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 0.1rem;
+}
+
+.c0 .form-error {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  color: #df0000;
+  font-weight: 500;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c2 {
+  width: 100%;
+  border-radius: 12px;
+  margin: 0.75rem 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  padding: 1.25rem 1.75rem;
+  border: 1.15px solid #fff;
+  box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.1);
+  font-weight: 500;
+  font-size: 1.125rem;
+  -webkit-transition: box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.c2 .icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: 1.75rem;
+  width: 2rem;
+}
+
+.c2 .input {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c2:focus-within {
+  box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.2);
+}
+
+.c2 label,
+.c2 input,
+.c2 ::-webkit-input-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c2 label,
+.c2 input,
+.c2 ::-moz-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c2 label,
+.c2 input,
+.c2 :-ms-input-placeholder {
+  margin: 0.15rem 0;
+}
+
+.c2 label,
+.c2 input,
+.c2 ::placeholder {
+  margin: 0.15rem 0;
+}
+
+.c2 label {
+  -webkit-letter-spacing: 0.06rem;
+  -moz-letter-spacing: 0.06rem;
+  -ms-letter-spacing: 0.06rem;
+  letter-spacing: 0.06rem;
+  color: #605c54;
+}
+
+.c2 label span {
+  color: #df0000;
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+.c2 input,
+.c2 ::-webkit-input-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c2 input,
+.c2 ::-moz-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c2 input,
+.c2 :-ms-input-placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c2 input,
+.c2 ::placeholder {
+  -webkit-letter-spacing: 0.04rem;
+  -moz-letter-spacing: 0.04rem;
+  -ms-letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+.c2 input {
+  border: 0;
+  padding: 0;
+  -webkit-transition: all 0.075s linear;
+  transition: all 0.075s linear;
+  color: #403c34;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transform-origin: left center;
+  -ms-transform-origin: left center;
+  transform-origin: left center;
+  max-width: 100%;
+}
+
+.c2 input[type='number'],
+.c2 input[type='number']:focus {
+  width: 15%;
+}
+
+.c2 input:focus {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  width: 90%;
+}
+
+.c2 ::-webkit-input-placeholder {
+  color: #9d9480;
+}
+
+.c2 ::-moz-placeholder {
+  color: #9d9480;
+}
+
+.c2 :-ms-input-placeholder {
+  color: #9d9480;
+}
+
+.c2 ::placeholder {
+  color: #9d9480;
+}
+
+.c2 .DayPickerInput-OverlayWrapper {
+  position: absolute;
+  border-radius: 12px;
+}
+
+.c2 .DayPickerInput-Overlay {
+  border-radius: 12px;
+}
+
+.c2 .DayPicker-Day--today {
+  color: #478170;
+}
+
+.c2 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+  position: relative;
+  background-color: #478170;
+  color: #fff;
+}
+
+.c2 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
+  background-color: #478170;
+}
+
+.c2 .DayPicker:not(.DayPicker--interactionDisabled) .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+  background-color: rgba(119,177,160,0.25);
+}
+
+@media (max-width:1020px) {
+
+}
+
+@media (max-width:510px) {
+
+}
+
+<div
+  className="c0"
+  width="35.75rem"
+>
+  <h1>
+    Stay at an Illegal Hotel.
+  </h1>
+  <h2>
+    Search through listings in the world's top cities on Bearbnb.
+  </h2>
+  <form
+    className="c1"
+    onSubmit={[Function]}
+  >
+    <div
+      className="c2"
+      width="100%"
+    >
+      <div
+        aria-hidden="true"
+        className="icon"
+      >
+        <img
+          src="test-file-stub"
+        />
+      </div>
+      <div
+        className="input"
+      >
+        <label
+          htmlFor="location"
+        >
+          Location
+          <span
+            aria-hidden="true"
+            className="error-msg"
+          />
+          <span
+            aria-live="assertive"
+            className="visually-hidden"
+          />
+        </label>
+        <input
+          autoComplete="off"
+          id="location"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Los Angeles, California"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="c2"
+      width="100%"
+    >
+      <div
+        aria-hidden="true"
+        className="icon"
+      >
+        <img
+          src="test-file-stub"
+        />
+      </div>
+      <div
+        className="input"
+      >
+        <label
+          htmlFor="checkin"
+        >
+          Checkin
+          <span
+            aria-hidden="true"
+            className="error-msg"
+          />
+          <span
+            aria-live="assertive"
+            className="visually-hidden"
+          />
+        </label>
+        <div
+          className="DayPickerInput"
+        >
+          <input
+            autoComplete="off"
+            data-isdate={true}
+            id="checkin"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            placeholder="YYYY-M-D"
+            value="2020-10-28"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+      width="100%"
+    >
+      <div
+        aria-hidden="true"
+        className="icon"
+      >
+        <img
+          src="test-file-stub"
+        />
+      </div>
+      <div
+        className="input"
+      >
+        <label
+          htmlFor="checkout"
+        >
+          Checkout
+          <span
+            aria-hidden="true"
+            className="error-msg"
+          />
+          <span
+            aria-live="assertive"
+            className="visually-hidden"
+          />
+        </label>
+        <div
+          className="DayPickerInput"
+        >
+          <input
+            autoComplete="off"
+            data-isdate={true}
+            id="checkout"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            placeholder="YYYY-M-D"
+            value="2020-10-29"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+      width="100%"
+    >
+      <div
+        aria-hidden="true"
+        className="icon"
+      >
+        <img
+          src="test-file-stub"
+        />
+      </div>
+      <div
+        className="input"
+      >
+        <label
+          htmlFor="guests"
+        >
+          Guests
+          <span
+            aria-hidden="true"
+            className="error-msg"
+          />
+          <span
+            aria-live="assertive"
+            className="visually-hidden"
+          />
+        </label>
+        <input
+          id="guests"
+          min={1}
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="1"
+          type="number"
+          value={1}
+        />
+      </div>
+    </div>
+    <span
+      aria-live="assertive"
+      className="form-error"
+    />
+    <button
+      aria-disabled={true}
+      disabled={true}
+      type="submit"
+    >
+      Search
+    </button>
+  </form>
+</div>
+`;
+
 exports[`Storyshots Header Default 1`] = `
 .c3 {
   display: -webkit-inline-box;
