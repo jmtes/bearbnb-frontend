@@ -18,11 +18,30 @@ const SearchForm = () => {
     checkout: null,
     guests: null
   });
+  const [submitEnabled, setSubmitEnabled] = useState(false);
 
   useEffect(() => {
     if (Date.parse(values.checkout) < Date.parse(values.checkin))
       setValues({ ...values, checkout: addDays(values.checkin, 1) });
   }, [values.checkin]);
+
+  useEffect(() => {
+    if (
+      !values.location ||
+      errors.location ||
+      errors.checkin ||
+      errors.checkout ||
+      errors.guests
+    )
+      setSubmitEnabled(false);
+    else setSubmitEnabled(true);
+  }, [
+    values.location,
+    errors.location,
+    errors.checkin,
+    errors.checkout,
+    errors.guests
+  ]);
 
   const validators = {
     location: (input) => (input ? null : 'This field is required'),
@@ -38,8 +57,13 @@ const SearchForm = () => {
         return 'Must be after checkin date';
       return null;
     },
-    guests: (input) =>
-      Number.isInteger(parseFloat(input)) ? null : 'Must be an integer'
+    guests: (input) => {
+      const num = parseFloat(input);
+
+      return Number.isInteger(num) && num > 0
+        ? null
+        : 'Must be a positive integer';
+    }
   };
 
   const debouncedValidators = {
@@ -77,12 +101,27 @@ const SearchForm = () => {
     });
   };
 
+  const onFormSubmit = () => {
+    const data = {
+      location: values.location,
+      checkin: values.checkin.toISOString(),
+      checkout: values.checkout.toISOString(),
+      guests: parseInt(values.guests)
+    };
+
+    console.log(data);
+
+    // TODO: Dispatch SEARCH_LISTINGS action
+    // Redirect to search page
+  };
+
   return (
     <Form
       title="Stay at an Illegal Hotel."
       subtitle="Search through listings in the world's top cities on Bearbnb."
       buttonText="Search"
-      onFormSubmit={() => console.log('searching listings...')}>
+      onFormSubmit={onFormSubmit}
+      submitEnabled={submitEnabled}>
       <Input
         id="location"
         label="Location"
@@ -129,6 +168,13 @@ const SearchForm = () => {
         onChange={(event) => onFieldChange(event)}
         onBlur={(event) => onFieldBlur(event)}
       />
+      <span aria-live="assertive" className="form-error">
+        {(errors.location ||
+          errors.checkin ||
+          errors.checkout ||
+          errors.guests) &&
+          'Please fix all errors before submitting.'}
+      </span>
     </Form>
   );
 };
