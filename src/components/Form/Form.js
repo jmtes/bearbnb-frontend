@@ -51,62 +51,29 @@ const Form = ({
   buttonText,
   onFormSubmit,
   subtitle,
-  children
+  children,
+  submitEnabled
 }) => {
   const [error, setError] = useState(null);
 
   const onSubmit = (event) => {
     event.preventDefault();
 
-    const inputs = Array.from(event.target.querySelectorAll('input'));
-    const errors = Array.from(event.target.querySelectorAll('.error-msg'));
-
-    // Check that all required fields are filled in
-    if (inputs.some((input) => input.dataset.required && !input.value)) {
-      const requiredFields = inputs
-        .filter((input) => input.dataset.required && !input.value)
-        .map((input) => input.id.charAt(0).toUpperCase() + input.id.slice(1));
-      setError(
-        `Please fill in the following fields: ${requiredFields.join(', ')}`
-      );
-    }
-    // Check if there are any errors
-    // If so, ask user to fix them
-    else if (errors.some((error) => error.innerText))
-      setError('Please fix all errors before submitting.');
-    else {
-      setError(null);
-
-      // Put all input values into object
-      const inputValues = {};
-
-      inputs.forEach((input) => {
-        let value;
-
-        // If input is of type number, convert it into a number
-        if (input.type === 'number') value = parseFloat(input.value);
-        // If input is of type date, convert it to an ISO string
-        else if (input.dataset.isdate)
-          value = new Date(input.value).toISOString();
-        else value = input.value;
-
-        inputValues[input.id] = value;
-      });
-
-      onFormSubmit(inputValues);
-    }
+    onFormSubmit();
   };
 
   return (
     <FormContainer titleSize={titleSize} width={width}>
       <h1>{title}</h1>
       {subtitle && <h2>{subtitle}</h2>}
-      <StyledForm onSubmit={(event) => onSubmit(event)}>
+      <StyledForm onSubmit={onSubmit}>
         {children}
-        <span aria-live="assertive" className="form-error">
-          {error}
-        </span>
-        <button type="submit">{buttonText}</button>
+        <button
+          type="submit"
+          disabled={!submitEnabled}
+          aria-disabled={!submitEnabled}>
+          {buttonText}
+        </button>
       </StyledForm>
     </FormContainer>
   );
