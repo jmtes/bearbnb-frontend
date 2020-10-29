@@ -5,6 +5,10 @@ import styled, { css } from 'styled-components';
 import { font } from '../../shared/theme';
 
 const PrimaryHover = css`
+  &:enabled:hover {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
   &:enabled::before {
     position: absolute;
     content: '';
@@ -22,6 +26,15 @@ const PrimaryHover = css`
 
   &:enabled:hover::before {
     opacity: 1;
+  }
+`;
+
+const SecondaryActive = css`
+  &:enabled:active {
+    background: #fcfcfc;
+    padding-top: 1.0625rem;
+    box-shadow: 0px 0px 8px rgba(129, 129, 129, 0.2),
+      inset 0px 4px 4px rgba(0, 0, 0, 0.1);
   }
 `;
 
@@ -52,14 +65,8 @@ const StyledButton = styled.button`
   cursor: pointer;
   z-index: 1;
   position: relative;
-  transition: all 0.25s ease;
-
-  &:enabled:hover {
-    box-shadow: ${(props) =>
-      props.variant === 'primary'
-        ? '0px 4px 4px rgba(0, 0, 0, 0.25)'
-        : '0px 4px 8px rgba(129, 129, 129, 0.2), inset 0px 4px 4px rgba(0, 0, 0, 0.1)'};
-  }
+  transition: all ${(props) =>
+    props.variant === 'primary' ? '0.25s' : '0.1s'} ease;
 
   &:disabled {
     cursor: not-allowed;
@@ -84,6 +91,7 @@ const StyledButton = styled.button`
   }
 
   ${(props) => props.variant === 'primary' && PrimaryHover}
+  ${(props) => props.variant === 'secondary' && SecondaryActive}
 `;
 
 const Button = ({ text, variant, size, disabled, onClick }) => {
