@@ -5,7 +5,8 @@ import { MemoryRouter, Link } from 'react-router-dom';
 import 'jest-styled-components';
 import { Provider } from 'react-redux';
 
-import Header, { TextLogo, Logo } from '../../src/components/Header/Header';
+import Header, { TextLogo } from '../../src/components/Header/Header';
+import Logo from '../../src/components/Logo/Logo';
 import User from '../../src/components/User/User';
 import { storeNotLoggedIn } from '../../mocks/storeMock';
 
@@ -32,7 +33,6 @@ describe('Header Component', () => {
     const logoImg = wrapper.find(Logo);
 
     expect(logoImg.props().size).toBe('2.625rem');
-    expect(logoImg.props().src).toBe(logo);
   });
 
   test('Renders user menu', () => {
