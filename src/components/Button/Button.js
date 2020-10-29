@@ -97,12 +97,13 @@ const StyledButton = styled.button`
 const validVariants = ['primary', 'secondary'];
 const validSizes = ['large', 'normal', 'small'];
 
-const Button = ({ text, variant, size, disabled, onClick }) => {
+const Button = ({ type, text, variant, size, disabled, onClick }) => {
   if (!validVariants.includes(variant)) variant = 'primary';
   if (!validSizes.includes(size)) size = 'normal';
 
   return (
     <StyledButton
+      type={type}
       variant={variant}
       size={size}
       disabled={disabled}
@@ -114,6 +115,7 @@ const Button = ({ text, variant, size, disabled, onClick }) => {
 };
 
 Button.propTypes = {
+  type: PropTypes.string,
   text: PropTypes.string,
   variant: PropTypes.string,
   size: PropTypes.string,
@@ -122,6 +124,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+  type: 'button',
   text: 'Click',
   variant: 'primary',
   size: 'normal',

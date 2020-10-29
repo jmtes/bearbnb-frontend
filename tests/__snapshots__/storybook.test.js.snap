@@ -80,6 +80,7 @@ exports[`Storyshots Button Default 1`] = `
   disabled={false}
   onClick={[Function]}
   size="normal"
+  type="button"
 >
   Primary
 </button>
@@ -165,6 +166,7 @@ exports[`Storyshots Button Primary 1`] = `
   disabled={false}
   onClick={[Function]}
   size="normal"
+  type="button"
 >
   Primary
 </button>
@@ -250,6 +252,7 @@ exports[`Storyshots Button Primary Disabled 1`] = `
   disabled={true}
   onClick={[Function]}
   size="normal"
+  type="button"
 >
   Primary
 </button>
@@ -335,6 +338,7 @@ exports[`Storyshots Button Primary Large 1`] = `
   disabled={false}
   onClick={[Function]}
   size="large"
+  type="button"
 >
   Primary
 </button>
@@ -420,6 +424,7 @@ exports[`Storyshots Button Primary Small 1`] = `
   disabled={false}
   onClick={[Function]}
   size="small"
+  type="button"
 >
   Primary
 </button>
@@ -488,6 +493,7 @@ exports[`Storyshots Button Secondary 1`] = `
   disabled={false}
   onClick={[Function]}
   size="normal"
+  type="button"
 >
   Secondary
 </button>
@@ -556,6 +562,7 @@ exports[`Storyshots Button Secondary Disabled 1`] = `
   disabled={true}
   onClick={[Function]}
   size="normal"
+  type="button"
 >
   Secondary
 </button>
@@ -624,6 +631,7 @@ exports[`Storyshots Button Secondary Large 1`] = `
   disabled={false}
   onClick={[Function]}
   size="large"
+  type="button"
 >
   Secondary
 </button>
@@ -692,6 +700,7 @@ exports[`Storyshots Button Secondary Small 1`] = `
   disabled={false}
   onClick={[Function]}
   size="small"
+  type="button"
 >
   Secondary
 </button>

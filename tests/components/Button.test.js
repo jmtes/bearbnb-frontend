@@ -6,6 +6,19 @@ import Button from '../../src/components/Button/Button';
 
 describe('Button Component', () => {
   describe('Props', () => {
+    test('Type prop sets the rendered button type as expected', () => {
+      const type = 'submit';
+      const wrapper = shallow(<Button type={type} />);
+
+      expect(wrapper.props().type).toBe(type);
+    });
+
+    test('Type prop defaults to button', () => {
+      const wrapper = shallow(<Button />);
+
+      expect(wrapper.props().type).toBe('button');
+    });
+
     test('Text prop sets rendered button text as expected', () => {
       const text = 'gec';
       const wrapper = shallow(<Button text={text} />);
