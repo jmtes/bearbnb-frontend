@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import { font } from '../../shared/theme';
-import logo from '../../assets/logo_colored.svg';
 
+import Logo from '../Logo/Logo';
 import User from '../User/User';
 
 const StyledHeader = styled.header`
@@ -14,6 +14,7 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   position: relative;
+  background-color: #fff;
 `;
 
 export const TextLogo = styled.div`
@@ -26,24 +27,13 @@ export const TextLogo = styled.div`
   }
 `;
 
-export const Logo = styled.img`
-  height: ${(props) => props.size};
-  width: ${(props) => props.size};
-  position: absolute;
-  left: 50%;
-
-  @media (max-width: 1024px) {
-    display: none;
-  }
-`;
-
 const Header = () => {
   return (
     <StyledHeader>
       <TextLogo>
         <Link to="/">bearbnb</Link>
       </TextLogo>
-      <Logo size={'2.625rem'} src={logo} />
+      <Logo />
       <User />
     </StyledHeader>
   );
