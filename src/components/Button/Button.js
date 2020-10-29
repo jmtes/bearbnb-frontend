@@ -106,6 +106,7 @@ const Button = ({ text, variant, size, disabled, onClick }) => {
       variant={variant}
       size={size}
       disabled={disabled}
+      aria-disabled={disabled}
       onClick={onClick}>
       {text}
     </StyledButton>

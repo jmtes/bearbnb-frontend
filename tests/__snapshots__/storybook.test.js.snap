@@ -75,6 +75,7 @@ exports[`Storyshots Button Default 1`] = `
 }
 
 <button
+  aria-disabled={false}
   className="c0"
   disabled={false}
   onClick={[Function]}
@@ -159,6 +160,7 @@ exports[`Storyshots Button Primary 1`] = `
 }
 
 <button
+  aria-disabled={false}
   className="c0"
   disabled={false}
   onClick={[Function]}
@@ -243,6 +245,7 @@ exports[`Storyshots Button Primary Disabled 1`] = `
 }
 
 <button
+  aria-disabled={true}
   className="c0"
   disabled={true}
   onClick={[Function]}
@@ -327,6 +330,7 @@ exports[`Storyshots Button Primary Large 1`] = `
 }
 
 <button
+  aria-disabled={false}
   className="c0"
   disabled={false}
   onClick={[Function]}
@@ -411,6 +415,7 @@ exports[`Storyshots Button Primary Small 1`] = `
 }
 
 <button
+  aria-disabled={false}
   className="c0"
   disabled={false}
   onClick={[Function]}
@@ -478,6 +483,7 @@ exports[`Storyshots Button Secondary 1`] = `
 }
 
 <button
+  aria-disabled={false}
   className="c0"
   disabled={false}
   onClick={[Function]}
@@ -545,6 +551,7 @@ exports[`Storyshots Button Secondary Disabled 1`] = `
 }
 
 <button
+  aria-disabled={true}
   className="c0"
   disabled={true}
   onClick={[Function]}
@@ -612,6 +619,7 @@ exports[`Storyshots Button Secondary Large 1`] = `
 }
 
 <button
+  aria-disabled={false}
   className="c0"
   disabled={false}
   onClick={[Function]}
@@ -679,6 +687,7 @@ exports[`Storyshots Button Secondary Small 1`] = `
 }
 
 <button
+  aria-disabled={false}
   className="c0"
   disabled={false}
   onClick={[Function]}

@@ -64,12 +64,14 @@ describe('Button Component', () => {
       const wrapper = shallow(<Button disabled={disabled} />);
 
       expect(wrapper.props().disabled).toBe(disabled);
+      expect(wrapper.props()['aria-disabled']).toBe(disabled);
     });
 
     test('Disabled prop defaults to false', () => {
       const wrapper = shallow(<Button />);
 
       expect(wrapper.props().disabled).toBe(false);
+      expect(wrapper.props()['aria-disabled']).toBe(false);
     });
   });
 
