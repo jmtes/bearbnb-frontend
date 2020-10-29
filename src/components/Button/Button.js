@@ -94,7 +94,13 @@ const StyledButton = styled.button`
   ${(props) => props.variant === 'secondary' && SecondaryActive}
 `;
 
+const validVariants = ['primary', 'secondary'];
+const validSizes = ['large', 'normal', 'small'];
+
 const Button = ({ text, variant, size, disabled, onClick }) => {
+  if (!validVariants.includes(variant)) variant = 'primary';
+  if (!validSizes.includes(size)) size = 'normal';
+
   return (
     <StyledButton
       variant={variant}
