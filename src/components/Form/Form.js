@@ -30,7 +30,7 @@ const FormContainer = styled.div`
   & .form-error {
     width: 100%;
     text-align: center;
-    padding: 1rem 0;
+    padding: 1rem 0 1.5rem;
     color: #df0000;
     font-weight: ${font.weight.medium};
   }
@@ -48,14 +48,10 @@ const Form = ({
   width,
   title,
   titleSize,
-  buttonText,
   onFormSubmit,
   subtitle,
-  children,
-  submitEnabled
+  children
 }) => {
-  const [error, setError] = useState(null);
-
   const onSubmit = (event) => {
     event.preventDefault();
 
@@ -66,15 +62,7 @@ const Form = ({
     <FormContainer titleSize={titleSize} width={width}>
       <h1>{title}</h1>
       {subtitle && <h2>{subtitle}</h2>}
-      <StyledForm onSubmit={onSubmit}>
-        {children}
-        <button
-          type="submit"
-          disabled={!submitEnabled}
-          aria-disabled={!submitEnabled}>
-          {buttonText}
-        </button>
-      </StyledForm>
+      <StyledForm onSubmit={onSubmit}>{children}</StyledForm>
     </FormContainer>
   );
 };
@@ -84,7 +72,6 @@ Form.propTypes = {
   title: PropTypes.string.isRequired,
   titleSize: PropTypes.string,
   subtitle: PropTypes.string,
-  buttonText: PropTypes.string,
   onFormSubmit: PropTypes.func
 };
 
@@ -92,7 +79,6 @@ Form.defaultProps = {
   width: '35.75rem',
   titleSize: '1.5rem',
   subtitle: '',
-  buttonText: 'Submit',
   onFormSubmit: () => {}
 };
 
