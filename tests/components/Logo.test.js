@@ -20,5 +20,18 @@ describe('Logo Component', () => {
 
       expect(wrapper.props().size).toBe('2.625rem');
     });
+
+    test('Position prop positions rendered logo as expected', () => {
+      const position = 'relative';
+      const wrapper = shallow(<Logo position={position} />);
+
+      expect(wrapper.props().position).toBe(position);
+    });
+
+    test('Position defaults to absolute', () => {
+      const wrapper = shallow(<Logo />);
+
+      expect(wrapper.props().position).toBe('absolute');
+    });
   });
 });
