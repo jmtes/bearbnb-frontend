@@ -1,5 +1,693 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Button Default 1`] = `
+.c0 {
+  border: 0;
+  min-width: 18.125rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #fff;
+  background: linear-gradient(90deg,rgba(150,219,199,0.5) 0%,#547c71 100%),#77b1a0;
+  -webkit-letter-spacing: 0.04em;
+  -moz-letter-spacing: 0.04em;
+  -ms-letter-spacing: 0.04em;
+  letter-spacing: 0.04em;
+  padding: 1rem 0;
+  border-radius: 12px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.25);
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.c0:disabled {
+  cursor: not-allowed;
+  border: none;
+  color: #fff;
+}
+
+.c0:disabled::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: lightgray;
+  border-radius: inherit;
+  z-index: -1;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  opacity: 0.75;
+}
+
+.c0:enabled:hover {
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+}
+
+.c0:enabled::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(270deg,#6a978a -10%,rgba(126,183,166,0.5) 155%),#77b1a0;
+  border-radius: inherit;
+  z-index: -1;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.c0:enabled:hover::before {
+  opacity: 1;
+}
+
+@media (max-width:1020px) {
+
+}
+
+@media (max-width:510px) {
+
+}
+
+<button
+  className="c0"
+  disabled={false}
+  onClick={[Function]}
+  size="normal"
+>
+  Primary
+</button>
+`;
+
+exports[`Storyshots Button Primary 1`] = `
+.c0 {
+  border: 0;
+  min-width: 18.125rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #fff;
+  background: linear-gradient(90deg,rgba(150,219,199,0.5) 0%,#547c71 100%),#77b1a0;
+  -webkit-letter-spacing: 0.04em;
+  -moz-letter-spacing: 0.04em;
+  -ms-letter-spacing: 0.04em;
+  letter-spacing: 0.04em;
+  padding: 1rem 0;
+  border-radius: 12px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.25);
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.c0:disabled {
+  cursor: not-allowed;
+  border: none;
+  color: #fff;
+}
+
+.c0:disabled::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: lightgray;
+  border-radius: inherit;
+  z-index: -1;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  opacity: 0.75;
+}
+
+.c0:enabled:hover {
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+}
+
+.c0:enabled::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(270deg,#6a978a -10%,rgba(126,183,166,0.5) 155%),#77b1a0;
+  border-radius: inherit;
+  z-index: -1;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.c0:enabled:hover::before {
+  opacity: 1;
+}
+
+@media (max-width:1020px) {
+
+}
+
+@media (max-width:510px) {
+
+}
+
+<button
+  className="c0"
+  disabled={false}
+  onClick={[Function]}
+  size="normal"
+>
+  Primary
+</button>
+`;
+
+exports[`Storyshots Button Primary Disabled 1`] = `
+.c0 {
+  border: 0;
+  min-width: 18.125rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #fff;
+  background: linear-gradient(90deg,rgba(150,219,199,0.5) 0%,#547c71 100%),#77b1a0;
+  -webkit-letter-spacing: 0.04em;
+  -moz-letter-spacing: 0.04em;
+  -ms-letter-spacing: 0.04em;
+  letter-spacing: 0.04em;
+  padding: 1rem 0;
+  border-radius: 12px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.25);
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.c0:disabled {
+  cursor: not-allowed;
+  border: none;
+  color: #fff;
+}
+
+.c0:disabled::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: lightgray;
+  border-radius: inherit;
+  z-index: -1;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  opacity: 0.75;
+}
+
+.c0:enabled:hover {
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+}
+
+.c0:enabled::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(270deg,#6a978a -10%,rgba(126,183,166,0.5) 155%),#77b1a0;
+  border-radius: inherit;
+  z-index: -1;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.c0:enabled:hover::before {
+  opacity: 1;
+}
+
+@media (max-width:1020px) {
+
+}
+
+@media (max-width:510px) {
+
+}
+
+<button
+  className="c0"
+  disabled={true}
+  onClick={[Function]}
+  size="normal"
+>
+  Primary
+</button>
+`;
+
+exports[`Storyshots Button Primary Large 1`] = `
+.c0 {
+  border: 0;
+  min-width: 20.375rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg,rgba(150,219,199,0.5) 0%,#547c71 100%),#77b1a0;
+  -webkit-letter-spacing: 0.04em;
+  -moz-letter-spacing: 0.04em;
+  -ms-letter-spacing: 0.04em;
+  letter-spacing: 0.04em;
+  padding: 1rem 0;
+  border-radius: 12px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.25);
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.c0:disabled {
+  cursor: not-allowed;
+  border: none;
+  color: #fff;
+}
+
+.c0:disabled::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: lightgray;
+  border-radius: inherit;
+  z-index: -1;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  opacity: 0.75;
+}
+
+.c0:enabled:hover {
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+}
+
+.c0:enabled::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(270deg,#6a978a -10%,rgba(126,183,166,0.5) 155%),#77b1a0;
+  border-radius: inherit;
+  z-index: -1;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.c0:enabled:hover::before {
+  opacity: 1;
+}
+
+@media (max-width:1020px) {
+
+}
+
+@media (max-width:510px) {
+
+}
+
+<button
+  className="c0"
+  disabled={false}
+  onClick={[Function]}
+  size="large"
+>
+  Primary
+</button>
+`;
+
+exports[`Storyshots Button Primary Small 1`] = `
+.c0 {
+  border: 0;
+  min-width: 16rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #fff;
+  background: linear-gradient(90deg,rgba(150,219,199,0.5) 0%,#547c71 100%),#77b1a0;
+  -webkit-letter-spacing: 0.04em;
+  -moz-letter-spacing: 0.04em;
+  -ms-letter-spacing: 0.04em;
+  letter-spacing: 0.04em;
+  padding: 1rem 0;
+  border-radius: 12px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.25);
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.c0:disabled {
+  cursor: not-allowed;
+  border: none;
+  color: #fff;
+}
+
+.c0:disabled::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: lightgray;
+  border-radius: inherit;
+  z-index: -1;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  opacity: 0.75;
+}
+
+.c0:enabled:hover {
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+}
+
+.c0:enabled::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(270deg,#6a978a -10%,rgba(126,183,166,0.5) 155%),#77b1a0;
+  border-radius: inherit;
+  z-index: -1;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.c0:enabled:hover::before {
+  opacity: 1;
+}
+
+@media (max-width:1020px) {
+
+}
+
+@media (max-width:510px) {
+
+}
+
+<button
+  className="c0"
+  disabled={false}
+  onClick={[Function]}
+  size="small"
+>
+  Primary
+</button>
+`;
+
+exports[`Storyshots Button Secondary 1`] = `
+.c0 {
+  border: 1px solid #fff;
+  min-width: 18.125rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: rgba(64,60,52,0.75);
+  background: #fff;
+  -webkit-letter-spacing: 0.04em;
+  -moz-letter-spacing: 0.04em;
+  -ms-letter-spacing: 0.04em;
+  letter-spacing: 0.04em;
+  padding: 1rem 0;
+  border-radius: 36px;
+  box-shadow: 0px 2px 8px rgba(129,129,129,0.25),inset 0px 2px 2px rgba(0,0,0,0.1);
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c0:disabled {
+  cursor: not-allowed;
+  border: none;
+  color: #fff;
+}
+
+.c0:disabled::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: gray;
+  border-radius: inherit;
+  z-index: -1;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  opacity: 0.25;
+}
+
+.c0:enabled:active {
+  background: #fcfcfc;
+  padding-top: 1.0625rem;
+  box-shadow: 0px 0px 8px rgba(129,129,129,0.2), inset 0px 4px 4px rgba(0,0,0,0.1);
+}
+
+@media (max-width:1020px) {
+
+}
+
+@media (max-width:510px) {
+
+}
+
+<button
+  className="c0"
+  disabled={false}
+  onClick={[Function]}
+  size="normal"
+>
+  Secondary
+</button>
+`;
+
+exports[`Storyshots Button Secondary Disabled 1`] = `
+.c0 {
+  border: 1px solid #fff;
+  min-width: 18.125rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: rgba(64,60,52,0.75);
+  background: #fff;
+  -webkit-letter-spacing: 0.04em;
+  -moz-letter-spacing: 0.04em;
+  -ms-letter-spacing: 0.04em;
+  letter-spacing: 0.04em;
+  padding: 1rem 0;
+  border-radius: 36px;
+  box-shadow: 0px 2px 8px rgba(129,129,129,0.25),inset 0px 2px 2px rgba(0,0,0,0.1);
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c0:disabled {
+  cursor: not-allowed;
+  border: none;
+  color: #fff;
+}
+
+.c0:disabled::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: gray;
+  border-radius: inherit;
+  z-index: -1;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  opacity: 0.25;
+}
+
+.c0:enabled:active {
+  background: #fcfcfc;
+  padding-top: 1.0625rem;
+  box-shadow: 0px 0px 8px rgba(129,129,129,0.2), inset 0px 4px 4px rgba(0,0,0,0.1);
+}
+
+@media (max-width:1020px) {
+
+}
+
+@media (max-width:510px) {
+
+}
+
+<button
+  className="c0"
+  disabled={true}
+  onClick={[Function]}
+  size="normal"
+>
+  Secondary
+</button>
+`;
+
+exports[`Storyshots Button Secondary Large 1`] = `
+.c0 {
+  border: 1px solid #fff;
+  min-width: 20.375rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: rgba(64,60,52,0.75);
+  background: #fff;
+  -webkit-letter-spacing: 0.04em;
+  -moz-letter-spacing: 0.04em;
+  -ms-letter-spacing: 0.04em;
+  letter-spacing: 0.04em;
+  padding: 1rem 0;
+  border-radius: 36px;
+  box-shadow: 0px 2px 8px rgba(129,129,129,0.25),inset 0px 2px 2px rgba(0,0,0,0.1);
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c0:disabled {
+  cursor: not-allowed;
+  border: none;
+  color: #fff;
+}
+
+.c0:disabled::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: gray;
+  border-radius: inherit;
+  z-index: -1;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  opacity: 0.25;
+}
+
+.c0:enabled:active {
+  background: #fcfcfc;
+  padding-top: 1.0625rem;
+  box-shadow: 0px 0px 8px rgba(129,129,129,0.2), inset 0px 4px 4px rgba(0,0,0,0.1);
+}
+
+@media (max-width:1020px) {
+
+}
+
+@media (max-width:510px) {
+
+}
+
+<button
+  className="c0"
+  disabled={false}
+  onClick={[Function]}
+  size="large"
+>
+  Secondary
+</button>
+`;
+
+exports[`Storyshots Button Secondary Small 1`] = `
+.c0 {
+  border: 1px solid #fff;
+  min-width: 16rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: rgba(64,60,52,0.75);
+  background: #fff;
+  -webkit-letter-spacing: 0.04em;
+  -moz-letter-spacing: 0.04em;
+  -ms-letter-spacing: 0.04em;
+  letter-spacing: 0.04em;
+  padding: 1rem 0;
+  border-radius: 36px;
+  box-shadow: 0px 2px 8px rgba(129,129,129,0.25),inset 0px 2px 2px rgba(0,0,0,0.1);
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c0:disabled {
+  cursor: not-allowed;
+  border: none;
+  color: #fff;
+}
+
+.c0:disabled::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: gray;
+  border-radius: inherit;
+  z-index: -1;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  opacity: 0.25;
+}
+
+.c0:enabled:active {
+  background: #fcfcfc;
+  padding-top: 1.0625rem;
+  box-shadow: 0px 0px 8px rgba(129,129,129,0.2), inset 0px 4px 4px rgba(0,0,0,0.1);
+}
+
+@media (max-width:1020px) {
+
+}
+
+@media (max-width:510px) {
+
+}
+
+<button
+  className="c0"
+  disabled={false}
+  onClick={[Function]}
+  size="small"
+>
+  Secondary
+</button>
+`;
+
 exports[`Storyshots Footer Default 1`] = `
 .c0 {
   background-color: #403c34;
@@ -2848,7 +3536,7 @@ exports[`Storyshots Forms/SearchForm Default 1`] = `
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             placeholder="YYYY-M-D"
-            value="2020-10-28"
+            value="2020-10-29"
           />
         </div>
       </div>
@@ -2895,7 +3583,7 @@ exports[`Storyshots Forms/SearchForm Default 1`] = `
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             placeholder="YYYY-M-D"
-            value="2020-10-29"
+            value="2020-10-30"
           />
         </div>
       </div>
