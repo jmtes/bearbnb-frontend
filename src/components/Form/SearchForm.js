@@ -4,6 +4,7 @@ import addDays from 'date-fns/addDays';
 
 import Form from './Form';
 import Input from './Input';
+import Button from '../Button/Button';
 
 const SearchForm = () => {
   const [values, setValues] = useState({
@@ -175,6 +176,13 @@ const SearchForm = () => {
           errors.guests) &&
           'Please fix all errors before submitting.'}
       </span>
+      <Button
+        type="submit"
+        text="Search"
+        variant="primary"
+        size="large"
+        disabled={!submitEnabled}
+      />
     </Form>
   );
 };
