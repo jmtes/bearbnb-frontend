@@ -120,9 +120,13 @@ const SearchForm = () => {
     <Form
       title="Stay at an Illegal Hotel."
       subtitle="Search through listings in the world's top cities on Bearbnb."
+      titleSize="3rem"
       buttonText="Search"
-      onFormSubmit={onFormSubmit}
-      submitEnabled={submitEnabled}>
+      buttonSize="large"
+      width="59.375rem"
+      submitEnabled={submitEnabled}
+      showLogo={true}
+      onFormSubmit={onFormSubmit}>
       <Input
         id="location"
         label="Location"
@@ -176,13 +180,6 @@ const SearchForm = () => {
           errors.guests) &&
           'Please fix all errors before submitting.'}
       </span>
-      <Button
-        type="submit"
-        text="Search"
-        variant="primary"
-        size="large"
-        disabled={!submitEnabled}
-      />
     </Form>
   );
 };
