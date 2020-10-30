@@ -97,6 +97,7 @@ const Wrapper = styled.div`
   }
 
   & .DayPickerInput-OverlayWrapper {
+    z-index: 2;
     position: absolute;
     border-radius: ${(props) => props.borderRadius};
   }
