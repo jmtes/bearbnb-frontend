@@ -13,7 +13,7 @@ const FormContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  padding: 2rem 6rem;
+  padding: 3rem 6rem;
   border: 0.5px solid #fff;
   border-radius: 36px;
   box-shadow: 0px 2px 8px 4px rgba(0, 0, 0, 0.05);
