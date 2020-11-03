@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import debounce from 'lodash.debounce';
 import addDays from 'date-fns/addDays';
+import isBefore from 'date-fns/isBefore';
+import isSameDay from 'date-fns/isSameDay';
 
 import Form from './Form';
 import Input from './Input';
-import Button from '../Button/Button';
+
+// TODO: INTEGRATE WITH REDUX SO THAT SEARCH QUERY CAN BE STORED THERE
 
 const SearchForm = () => {
   const [values, setValues] = useState({
@@ -54,7 +57,7 @@ const SearchForm = () => {
     },
     checkout: (input) => {
       if (!Date.parse(input)) return 'Must enter a valid date';
-      if (Date.parse(input) < Date.parse(values.checkin))
+      if (isBefore(input, values.checkin) && !isSameDay(input, values.checkin))
         return 'Must be after checkin date';
       return null;
     },
@@ -105,8 +108,8 @@ const SearchForm = () => {
   const onFormSubmit = () => {
     const data = {
       location: values.location,
-      checkin: values.checkin.toISOString(),
-      checkout: values.checkout.toISOString(),
+      checkin: new Date(values.checkin.toDateString()).toISOString(),
+      checkout: new Date(values.checkout.toDateString()).toISOString(),
       guests: parseInt(values.guests)
     };
 
@@ -173,7 +176,10 @@ const SearchForm = () => {
         onChange={(event) => onFieldChange(event)}
         onBlur={(event) => onFieldBlur(event)}
       />
-      <span aria-live="assertive" className="form-error">
+      <span
+        aria-live="assertive"
+        className="form-error"
+        data-testid="form-error">
         {(errors.location ||
           errors.checkin ||
           errors.checkout ||
