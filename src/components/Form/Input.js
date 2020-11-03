@@ -155,10 +155,16 @@ const Input = ({
       <div className="input">
         <label htmlFor={id}>
           {label}
-          <span aria-hidden="true" className="error-msg">
+          <span
+            aria-hidden="true"
+            className="error-msg"
+            data-testid={`${id}-error-msg`}>
             {error && error}
           </span>
-          <span aria-live="assertive" className="visually-hidden">
+          <span
+            aria-live="assertive"
+            className="visually-hidden"
+            data-testid={`${id}-error-msg-sr`}>
             {error && `input error: ${error}`}
           </span>
         </label>
@@ -170,6 +176,7 @@ const Input = ({
             }}
             inputProps={{
               id,
+              'data-testid': id,
               autoComplete: 'off',
               'data-isdate': true
             }}
@@ -184,6 +191,7 @@ const Input = ({
           <input
             type={type}
             id={id}
+            data-testid={id}
             value={value}
             placeholder={placeholder}
             onChange={(event) => onChange(event)}
