@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import isEmail from 'validator/lib/isEmail';
 
@@ -12,7 +12,7 @@ export default {
     docs: {
       description: {
         component:
-          'A component that accepts and validates user input. Note that, because input value changes and validation are managed by a parent `Form` component, the following examples do not work functionally and are meant to only give an idea of what each input field variant used in the app looks like. Please refer to the relevant form component, listed in the description of each story, to see the input validation in action.'
+          'A component that accepts and validates user input. Note that, because input value changes and validation should be managed by a parent component, each of the following examples are wrapped in a stateful container.'
       }
     }
   },
@@ -66,16 +66,45 @@ export default {
   }
 };
 
-const Template = (args) => <Input {...args} />;
+// const Template = (args) => <Input {...args} />;
+const Template = (args) => {
+  const [value, setValue] = useState('');
+  const [error, setError] = useState(null);
+
+  const validateInput = args.validator;
+
+  const onChange = (event) => {
+    setValue(event.target.value);
+
+    setError(validateInput(event.target.value));
+  };
+
+  const onBlur = (event) => setError(validateInput(event.target.value));
+
+  console.log(args.options);
+
+  return (
+    <Input
+      id={args.id}
+      label={args.label}
+      type={args.type}
+      placeholder={args.placeholder}
+      icon={args.icon}
+      value={value}
+      error={error}
+      onChange={onChange}
+      onBlur={onBlur}
+      options={args.options}
+    />
+  );
+};
 
 export const Default = Template.bind({});
 Default.args = {
   id: 'test',
   label: 'Input',
   placeholder: 'Placeholder',
-  value: '',
-  onChange: () => {},
-  onBlur: () => {}
+  validator: (value) => (value ? null : 'Cannot be empty')
 };
 
 export const Name = Template.bind({});
@@ -85,7 +114,9 @@ Name.args = {
   label: 'Name',
   type: 'text',
   placeholder: 'Rick',
-  options: { autoComplete: 'off' }
+  options: { autoComplete: 'off' },
+  validator: (value) =>
+    value.length < 2 ? 'Must be at least 2 characters' : null
 };
 Name.parameters = {
   docs: {
@@ -100,7 +131,9 @@ Email.args = {
   id: 'email',
   label: 'Email',
   type: 'email',
-  placeholder: 'rick@gmail.com'
+  placeholder: 'rick@gmail.com',
+  validator: (value) =>
+    isEmail(value) ? null : 'Must be a valid email address'
 };
 Email.parameters = {
   docs: {
@@ -116,7 +149,9 @@ Password.args = {
   label: 'Password',
   type: 'password',
   placeholder: 'Must contain at least 8 characters',
-  options: { minLength: 8 }
+  options: { minLength: 8 },
+  validator: (value) =>
+    value.length < 8 ? 'Must contain at least 8 characters' : null
 };
 Password.parameters = {
   docs: {
@@ -163,7 +198,14 @@ Checkin.args = {
   label: 'Checkin',
   type: 'date',
   icon: 'calendar',
-  width: '50%'
+  width: '50%',
+  options: { firstDay: new Date() },
+  validator: (value) => {
+    if (!Date.parse(value)) return 'Must enter a valid date';
+    if (Date.parse(value) < Date.parse(new Date().toDateString()))
+      return "Cannot be before today's date";
+    return null;
+  }
 };
 Checkin.parameters = {
   docs: {
@@ -179,7 +221,14 @@ Checkout.args = {
   label: 'Checkout',
   type: 'date',
   icon: 'calendar',
-  width: '50%'
+  width: '50%',
+  options: { firstDay: new Date() },
+  validator: (value) => {
+    if (!Date.parse(value)) return 'Must enter a valid date';
+    if (Date.parse(value) < Date.parse(new Date().toDateString()))
+      return "Cannot be before today's date";
+    return null;
+  }
 };
 Checkout.parameters = {
   docs: {
@@ -196,7 +245,14 @@ Guests.args = {
   type: 'number',
   placeholder: '1',
   icon: 'person',
-  options: { min: 1 }
+  options: { min: 1 },
+  validator: (value) => {
+    const num = parseFloat(value);
+
+    return Number.isInteger(num) && num > 0
+      ? null
+      : 'Must be a positive integer';
+  }
 };
 Guests.parameters = {
   docs: {
