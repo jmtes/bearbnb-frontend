@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { action } from '@storybook/addon-actions';
 import isEmail from 'validator/lib/isEmail';
 
 import Input from './Input';
+import debounce from 'lodash.debounce';
 
 export default {
   title: 'Forms/Input',
@@ -73,10 +74,15 @@ const Template = (args) => {
 
   const validateInput = args.validator;
 
+  const debouncedValidate = useCallback(
+    debounce((value) => setError(validateInput(value)), 750),
+    []
+  );
+
   const onChange = (event) => {
     setValue(event.target.value);
 
-    setError(validateInput(event.target.value));
+    debouncedValidate(event.target.value);
   };
 
   const onBlur = (event) => setError(validateInput(event.target.value));
