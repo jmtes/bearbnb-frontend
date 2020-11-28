@@ -12,6 +12,7 @@ const AbsolutePosition = css`
 export const StyledLogo = styled.img`
   height: ${(props) => props.size};
   width: ${(props) => props.size};
+  margin-bottom: 2rem;
   ${(props) =>
     props.position === 'absolute' &&
     AbsolutePosition} @media
