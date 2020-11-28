@@ -22,13 +22,14 @@ const FormContainer = styled.div`
   & h1 {
     font-size: ${(props) => props.titleSize};
     font-weight: ${font.weight.semibold};
+    margin: 0 0 2rem;
   }
 
   & h2 {
     font-size: 1.5rem;
     font-weight: ${font.weight.normal};
     text-align: center;
-    margin-top: 0.1rem;
+    margin: 0.1rem 0 2rem;
   }
 
   & .form-error {
@@ -46,6 +47,10 @@ export const StyledForm = styled.form`
   justify-content: space-around;
   align-items: center;
   width: 100%;
+
+  & > div {
+    margin: 1rem 0;
+  }
 `;
 
 const Form = ({
