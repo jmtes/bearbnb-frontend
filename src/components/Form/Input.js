@@ -158,12 +158,20 @@ const Input = ({
   const onBlur = ({ target: { value } }) => setError(validator(value));
 
   return (
-    <Wrapper width={width} borderRadius={borderRadius} error={!!error}>
+    <Wrapper
+      width={width}
+      borderRadius={borderRadius}
+      error={!!error}
+      data-testid={`${id}-input-wrapper`}>
       {validIcons.includes(icon) && (
         <div className="icon" aria-hidden="true">
-          {icon === 'location' && <img src={locationIcon} />}
-          {icon === 'calendar' && <img src={calendarIcon} />}
-          {icon === 'person' && <img src={personIcon} />}
+          {icon === 'location' && (
+            <img src={locationIcon} alt="Location Icon" />
+          )}
+          {icon === 'calendar' && (
+            <img src={calendarIcon} alt="Calendar Icon" />
+          )}
+          {icon === 'person' && <img src={personIcon} alt="Person Icon" />}
         </div>
       )}
       <div className="input">
