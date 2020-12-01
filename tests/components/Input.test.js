@@ -1,176 +1,178 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 import 'jest-styled-components';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+import userEvent from '@testing-library/user-event';
+import 'regenerator-runtime/runtime';
+import FakeTimers from '@sinonjs/fake-timers';
 
 import Input from '../../src/components/Form/Input';
 import { Default } from '../../src/components/Form/Input.stories';
+import { act } from 'react-dom/test-utils';
 
 describe('Input Component', () => {
   describe('Props', () => {
     test('Id prop sets id attribute of each input as expected', () => {
-      const wrapper = shallow(<Input {...Default.args} />);
-      const input = wrapper.find('input');
+      render(<Input {...Default.args} />);
 
-      expect(input.props().id).toBe(Default.args.id);
+      expect(screen.getByLabelText(Default.args.label)).toHaveAttribute(
+        'id',
+        Default.args.id
+      );
     });
 
     test('Label prop sets label of each input as expected', () => {
-      const wrapper = shallow(<Input {...Default.args} />);
-      const label = wrapper.find('label');
+      render(<Input {...Default.args} />);
 
-      expect(label.props().htmlFor).toBe(Default.args.id);
-      expect(label.text()).toBe(Default.args.label);
+      expect(screen.getByLabelText(Default.args.label)).toBeInTheDocument();
     });
 
     test('Type prop sets the type of each input as expected', () => {
       const type = 'email';
-      const wrapper = shallow(<Input {...Default.args} type={type} />);
-      const input = wrapper.find('input');
+      render(<Input {...Default.args} type={type} />);
 
-      expect(input.props().type).toBe(type);
+      expect(screen.getByLabelText(Default.args.label)).toHaveAttribute(
+        'type',
+        'email'
+      );
     });
 
     test('Type prop defaults to text', () => {
-      const wrapper = shallow(<Input {...Default.args} />);
-      const input = wrapper.find('input');
+      render(<Input {...Default.args} />);
 
-      expect(input.props().type).toBe('text');
-    });
-
-    test('Value prop sets the value of the input as expected', () => {
-      const value = "I think I've seen this film before...";
-      const wrapper = shallow(<Input {...Default.args} value={value} />);
-      const input = wrapper.find('input');
-
-      expect(input.props().value).toBe(value);
-    });
-
-    test('Value prop defaults to an empty string', () => {
-      const wrapper = shallow(<Input {...Default.args} />);
-      const input = wrapper.find('input');
-
-      expect(input.props().value).toBe('');
-    });
-
-    test('Error prop sets the value of the input as expected', () => {
-      const error = 'This field is required';
-      const wrapper = shallow(<Input {...Default.args} error={error} />);
-
-      const errorMsg = wrapper.find('span.error-msg');
-      const srErrorMsg = wrapper.find('span.error-msg + span.visually-hidden');
-
-      expect(errorMsg.text()).toBe(error);
-      expect(srErrorMsg.text()).toBe(`input error: ${error}`);
-    });
-
-    test('Error prop defaults to null', () => {
-      const wrapper = shallow(<Input {...Default.args} />);
-
-      const errorMsg = wrapper.find('span.error-msg');
-      const srErrorMsg = wrapper.find('span.error-msg + span.visually-hidden');
-
-      expect(errorMsg.text()).toBeFalsy();
-      expect(srErrorMsg.text()).toBeFalsy();
+      expect(screen.getByLabelText(Default.args.label)).toHaveAttribute(
+        'type',
+        'text'
+      );
     });
 
     test('Placeholder prop sets input placeholder as expected', () => {
-      const wrapper = shallow(<Input {...Default.args} />);
-      const input = wrapper.find('input');
+      render(<Input {...Default.args} />);
 
-      expect(input.props().placeholder).toBe(Default.args.placeholder);
+      expect(
+        screen.getByPlaceholderText(Default.args.placeholder)
+      ).toBeInTheDocument();
     });
 
     test('Placeholder prop defaults to an empty string', () => {
-      const wrapper = shallow(
-        <Input {...Default.args} placeholder={undefined} />
-      );
-      const input = wrapper.find('input');
+      render(<Input {...Default.args} placeholder={undefined} />);
 
-      expect(input.props().placeholder).toBe('');
+      expect(screen.getByLabelText(Default.args.label)).toHaveAttribute(
+        'placeholder',
+        ''
+      );
     });
 
     test('Options prop sets miscellaneous input options as expected', () => {
-      const wrapper = shallow(
-        <Input {...Default.args} options={{ minLength: 10 }} />
-      );
-      const input = wrapper.find('input');
+      render(<Input {...Default.args} options={{ minLength: 10 }} />);
 
-      expect(input.props().minLength).toBe(10);
+      expect(screen.getByLabelText(Default.args.label)).toHaveAttribute(
+        'minLength',
+        '10'
+      );
     });
 
     test('Width prop sets component width as expected', () => {
       const width = '50%';
-      const wrapper = shallow(<Input {...Default.args} width={width} />);
+      render(<Input {...Default.args} width={width} />);
 
-      expect(wrapper.props().width).toBe(width);
+      expect(
+        screen.getByTestId(`${Default.args.id}-input-wrapper`)
+      ).toHaveStyleRule('width', '50%');
     });
 
     test('Width prop defaults to 100% of parent element', () => {
-      const wrapper = shallow(<Input {...Default.args} />);
+      render(<Input {...Default.args} />);
 
-      expect(wrapper.props().width).toBe('100%');
+      expect(
+        screen.getByTestId(`${Default.args.id}-input-wrapper`)
+      ).toHaveStyleRule('width', '100%');
     });
 
     test('Border radius prop sets component border radius as expected', () => {
       const borderRadius = '0px';
-      const wrapper = shallow(
-        <Input {...Default.args} borderRadius={borderRadius} />
-      );
+      render(<Input {...Default.args} borderRadius={borderRadius} />);
 
-      expect(wrapper.props().borderRadius).toBe(borderRadius);
+      expect(
+        screen.getByTestId(`${Default.args.id}-input-wrapper`)
+      ).toHaveStyleRule('border-radius', '0px');
     });
 
     test('Border radius prop defaults to 12px', () => {
-      const wrapper = shallow(<Input {...Default.args} />);
+      render(<Input {...Default.args} />);
 
-      expect(wrapper.props().borderRadius).toBe('12px');
+      expect(
+        screen.getByTestId(`${Default.args.id}-input-wrapper`)
+      ).toHaveStyleRule('border-radius', '12px');
     });
 
     test('Icon prop renders the proper icon', () => {
       const icon = 'person';
-      const wrapper = shallow(<Input {...Default.args} icon={icon} />);
-      const renderedIcon = wrapper.find('.icon img');
+      const iconAltText = 'Person Icon';
+      render(<Input {...Default.args} icon={icon} />);
 
-      expect(renderedIcon.exists()).toBe(true);
+      expect(screen.getByAltText(iconAltText)).toBeInTheDocument();
     });
 
     test('Icon prop defaults to null, resulting in no icon being rendered', () => {
-      const wrapper = shallow(<Input {...Default.args} />);
-      const renderedIcon = wrapper.find('.icon img');
+      render(<Input {...Default.args} />);
 
-      expect(renderedIcon.exists()).toBe(false);
+      expect(screen.queryByAltText(/icon/i)).not.toBeInTheDocument();
     });
 
     test('If icon prop is not "location", "calendar", or "icon", it is seen as invalid and thus no icon is rendered', () => {
       const icon = 'hoax';
-      const wrapper = shallow(<Input {...Default.args} icon={icon} />);
-      const renderedIcon = wrapper.find('.icon img');
+      render(<Input {...Default.args} icon={icon} />);
 
-      expect(renderedIcon.exists()).toBe(false);
+      expect(screen.queryByAltText(/icon/i)).not.toBeInTheDocument();
+    });
+
+    test('defaultValue prop sets the value of the input as expected', () => {
+      const value = "I think I've seen this film before...";
+      render(<Input {...Default.args} defaultValue={value} />);
+
+      expect(screen.getByLabelText(Default.args.label)).toHaveValue(value);
+    });
+
+    test('defaultValue prop defaults to an empty string', () => {
+      render(<Input {...Default.args} />);
+
+      expect(screen.getByLabelText(Default.args.label)).toHaveValue('');
     });
   });
 
   describe('User Interactions', () => {
-    test('onChange is called on input change', () => {
-      const onChange = jest.fn();
+    let clock;
 
-      const wrapper = shallow(<Input {...Default.args} onChange={onChange} />);
-      const input = wrapper.find('input');
-
-      input.simulate('change', { target: { value: 'California' } });
-
-      expect(onChange).toHaveBeenCalledTimes(1);
+    beforeEach(() => {
+      clock = FakeTimers.install();
     });
 
-    test('onBlur is called on input blur', () => {
-      const onBlur = jest.fn();
+    afterEach(() => clock.uninstall());
 
-      const wrapper = shallow(<Input {...Default.args} onBlur={onBlur} />);
-      const input = wrapper.find('input');
+    test('Validator function is called on input change', async () => {
+      const validator = jest.fn();
+      render(<Input {...Default.args} validator={validator} />);
 
-      input.simulate('blur');
+      // Type input and advance clock by amount of debounce
+      userEvent.type(screen.getByLabelText(Default.args.label), 'California');
+      await act(async () => clock.tick(750));
 
-      expect(onBlur).toHaveBeenCalledTimes(1);
+      expect(validator).toHaveBeenCalledTimes(1);
+    });
+
+    test('Validator function is called is called on input blur', () => {
+      const validator = jest.fn();
+      render(<Input {...Default.args} validator={validator} />);
+
+      // Put input field into focus
+      userEvent.click(screen.getByLabelText(Default.args.label));
+      expect(screen.getByLabelText(Default.args.label)).toHaveFocus();
+
+      // Tab out of input field
+      userEvent.tab();
+
+      expect(validator).toHaveBeenCalledTimes(1);
     });
   });
 });
