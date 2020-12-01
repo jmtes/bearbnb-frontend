@@ -127,6 +127,8 @@ const Wrapper = styled.div`
   }
 `;
 
+const validIcons = ['location', 'calendar', 'person'];
+
 const Input = ({
   id,
   label,
@@ -136,12 +138,24 @@ const Input = ({
   width,
   borderRadius,
   icon,
-  value,
-  error,
-  onChange,
-  onBlur
+  defaultValue,
+  validator
 }) => {
-  const validIcons = ['location', 'calendar', 'person'];
+  const [value, setValue] = useState(defaultValue);
+  const [error, setError] = useState(null);
+
+  const debouncedValidate = useCallback(
+    debounce((input) => setError(validator(input)), 750),
+    []
+  );
+
+  const onChange = ({ target: { value } }) => {
+    setValue(value);
+
+    debouncedValidate(value);
+  };
+
+  const onBlur = ({ target: { value } }) => setError(validator(value));
 
   return (
     <Wrapper width={width} borderRadius={borderRadius} error={!!error}>
@@ -176,9 +190,10 @@ const Input = ({
             }}
             inputProps={{
               id,
-              'data-testid': id,
               autoComplete: 'off',
-              'data-isdate': true
+              'data-testid': id,
+              'data-isdate': true,
+              'data-error': error
             }}
             dayPickerProps={{
               initialMonth: options.firstDay,
@@ -192,6 +207,7 @@ const Input = ({
             type={type}
             id={id}
             data-testid={id}
+            data-error={error}
             value={value}
             placeholder={placeholder}
             onChange={(event) => onChange(event)}
@@ -212,10 +228,8 @@ Input.propTypes = {
   width: PropTypes.string,
   borderRadius: PropTypes.string,
   icon: PropTypes.string,
-  value: PropTypes.any,
-  error: PropTypes.string,
-  onChange: PropTypes.func,
-  onBlur: PropTypes.func
+  defaultValue: PropTypes.any,
+  validator: PropTypes.func
 };
 
 Input.defaultProps = {
@@ -225,10 +239,8 @@ Input.defaultProps = {
   width: '100%',
   borderRadius: '12px',
   icon: null,
-  value: '',
-  error: null,
-  onChange: () => {},
-  onBlur: () => {}
+  defaultValue: '',
+  validator: () => null
 };
 
 export default Input;
